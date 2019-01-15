@@ -2,7 +2,13 @@ $(document).ready(function () {
 
     var cpuPattern = [1,2,3,4];
 
-   
+    //Getting a random integer between two values, inclusive
+    function addNumToCpuPattern(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        cpuPattern.push(Math.floor(Math.random() * (max - min + 1)) + min);
+    };
+
 
 
     function b1() {
