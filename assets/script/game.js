@@ -12,6 +12,7 @@ $(document).ready(function () {
 
     var cpuPattern = [1,2,3,4];
     var currentLevel = 1;
+    var usedPattern = [];
 
     //Getting a random integer between two values, inclusive
     function addNumToCpuPattern(min, max) {
@@ -45,8 +46,8 @@ $(document).ready(function () {
 
 
     function cpuTurn() {
-        $("#txt").text("level:" + currentLevel);
-        $("#console").text("cpu turn");
+        $("#levelscreen").text("level:" + currentLevel);
+        $("#infoscreen").text("cpu turn");
         
         var delay = 1200;
 
@@ -63,8 +64,39 @@ $(document).ready(function () {
         
     };
 
+    function playerTurn() {
+
+        $("#infoscreen").text("player turn");
+        usedPattern = cpuPattern.slice(0);
+            $(".block").click(function () {
+                let blockId = this.id;
+                let item = usedPattern.shift();
+                if (blockId == item) {
+                    if (blockId == 1) { b1() }
+                    else if (blockId == 2) { b2() }
+                    else if (blockId == 3) { b3() }
+                    else if (blockId == 4) { b4() }
+                    if (usedPattern.length <= 0) {
+                       
+                            $("#infoscreen").text("you win!");
+                            
+                        }
+                }
+                else {
+                    
+                        $("#infoscreen").text("game over");
+                       
+                    }
+                });    
+            }
 
     $("#start").click(function(){
         cpuTurn();
-    })
+    });
+
+
+    $("#playerTurn").click(function () {
+        playerTurn();
+    });
+
 });
