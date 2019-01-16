@@ -1,11 +1,17 @@
 $(document).ready(function () {
 
+
+    $("#infoscreen").text("Game is switched off");
+    $("#levelscreen").text("level: ...");
+
+
     var sound1 = document.getElementById("sound1");
     var sound2 = document.getElementById("sound2");
     var sound3 = document.getElementById("sound3");
     var sound4 = document.getElementById("sound4");
 
     var cpuPattern = [1,2,3,4];
+    var currentLevel = 1;
 
     //Getting a random integer between two values, inclusive
     function addNumToCpuPattern(min, max) {
@@ -37,14 +43,28 @@ $(document).ready(function () {
     };
 
 
+
+    function cpuTurn() {
+        $("#txt").text("level:" + currentLevel);
+        $("#console").text("cpu turn");
+        
+        var delay = 1200;
+
+
+        for (let i = 0; i < cpuPattern.length; i++) {
+            (setTimeout(function () {
+                if (cpuPattern[i] == 1) { b1(); }
+                else if (cpuPattern[i] == 2) { b2(); }
+                else if (cpuPattern[i] == 3) { b3(); }
+                else { b4(); }
+            }, i * delay));
+        };
+
+        
+    };
+
+
     $("#start").click(function(){
-        for (i=0; i < cpuPattern.length;i++){
-            if (cpuPattern[i]==1){b1()}
-            else if (cpuPattern[i]==2){b2()}
-            else if (cpuPattern[i]==3){b3()}
-            else if (cpuPattern[i]==4){b4()}
-        }
+        cpuTurn();
     })
-
-
 });
