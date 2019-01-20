@@ -15,6 +15,7 @@ $(document).ready(function () {
     var usedPattern = [];
     var sound = true;
     var strictMode = false;
+    var timersIds = [];         //store IDs of setTimeout's methods that wiil be used to cancel the execution of setTimeout's
 
     //Getting a random integer between two values, inclusive
     function addNumToCpuPattern(min, max) {
@@ -77,19 +78,23 @@ $(document).ready(function () {
 
 
         for (let i = 0; i < cpuPattern.length; i++) {
-            (setTimeout(function () {
-                if (cpuPattern[i] == 1) { b1(); }
-                else if (cpuPattern[i] == 2) { b2(); }
-                else if (cpuPattern[i] == 3) { b3(); }
+            let ii = i; timersIds.push(setTimeout(function () {
+                if (cpuPattern[ii] == 1) { b1(); }
+                else if (cpuPattern[ii] == 2) { b2(); }
+                else if (cpuPattern[ii] == 3) { b3(); }
                 else { b4(); }
-            }, i * delay));
+            }, ii * delay));
         };
+        timersIds.push(setTimeout(function () { playerTurn(); }, delay * (currentLevel)))
+    };
 
-        
+    function stopSetTimeouts() {                         //stops execution of setTimeout's 
+        timersIds.forEach(function (timerId) {
+            clearTimeout(timerId);
+        });
     };
 
     function playerTurn() {
-
         $("#infoscreen").text("player turn");
         usedPattern = cpuPattern.slice(0);
             $(".block").click(function () {
@@ -129,6 +134,9 @@ $(document).ready(function () {
         playerTurn();
     });
 
+    $("#stop").click(function () {
+        stopSetTimeouts();
+    });
 
     $(function () {
         var details = $('#helpDetails');
@@ -183,7 +191,7 @@ $(document).ready(function () {
                 sound=true;
             }
           });
-          
+
     $("#strict").click(function () {
         if (strictMode == false) {
             strictMode = true;
