@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 
     $("#infoscreen").text("Game is switched off");
-    $("#levelscreen").text("level: ...");
+    $("#levelscreen").text("88888888888");
 
 
     var sound1 = document.getElementById("sound1");
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
 
     function cpuTurn() {
-        $("#levelscreen").text("level:" + currentLevel);
+        $("#levelscreen").text("level: " + currentLevel + " of " + numOfLevels);
         $("#infoscreen").text("cpu turn");
         gameStarted = true;
         var delay = 1200;
@@ -182,7 +182,7 @@ $(document).ready(function () {
         gameStarted = false;
         strictMode = false;
         sound = true;
-        $("#levelscreen").text("");
+        $("#levelscreen").text("88888");
     };
 
     function startGame() {
@@ -264,6 +264,40 @@ $(document).ready(function () {
             strictMode = false;
         }
     });
+
+
+
+    $("#chk5").click(function () {
+        if (switchedOn == true && gameStarted == true) {
+            stopGame();
+            $("#console").text("Game stopped. Press start button to play");
+            numOfLevels = 5;
+        }
+        else if (switchedOn == true && gameStarted == false) {
+            numOfLevels = 5;
+        }
+    });
+    $("#chk10").click(function () {
+        if (switchedOn == true && gameStarted == true) {
+            stopGame();
+            $("#console").text("Game stopped. Press start button to play");
+            numOfLevels = 10;
+        }
+        else if (switchedOn == true && gameStarted == false) {
+            numOfLevels = 10;
+        }
+    });
+    $("#chk15").click(function () {
+        if (switchedOn == true && gameStarted == true) {
+            stopGame();
+            $("#console").text("Game stopped. Press start button to play");
+            numOfLevels = 15;
+        }
+        else if (switchedOn == true && gameStarted == false) {
+            numOfLevels = 15;
+        }
+    });
+
 
 
 });
