@@ -10,12 +10,13 @@ $(document).ready(function () {
     var sound3 = document.getElementById("sound3");
     var sound4 = document.getElementById("sound4");
 
-    var cpuPattern = [1,2,3,4];
+    var cpuPattern = [];
     var currentLevel = 1;
     var usedPattern = [];
     var sound = true;
     var strictMode = false;
     var timersIds = [];         //store IDs of setTimeout's methods that wiil be used to cancel the execution of setTimeout's
+    var numOfLevels = 4;
 
     //Getting a random integer between two values, inclusive
     function addNumToCpuPattern(min, max) {
@@ -106,26 +107,41 @@ $(document).ready(function () {
                     else if (blockId == 3) { b3() }
                     else if (blockId == 4) { b4() }
                     if (usedPattern.length <= 0) {
-                       
+                        if (currentLevel == numOfLevels){
                             $("#infoscreen").text("you win!");
-                            
+                            $('.block').unbind();
                         }
-                }
+                        else {
+                            currentLevel++;
+                            $('.block').unbind();
+                            delay = 0;
+                            addNumToCpuPattern(1, 4);
+                            timersIds.push(setTimeout(function () { cpuTurn(); }, 2000));
+                        }
+                     }
+                  }
                 else {
                     if(strictMode==true){
                         $("#infoscreen").text("game over");
-                       
+                        pattern = [];
+                        $("#levelscreen").text("level: ...");
+                        $('.block').unbind();
+                        currentLevel = 1;
+    
                     }
                     else if(strictMode==false){
-                        setTimeout(function(){cpuTurn()}, 500);
                         $("#infoscreen").text("Wrong button!");
+                        delay = 0;
+                        $('.block').unbind();
+                        timersIds.push(setTimeout(function () { cpuTurn(); }, 1200));
                     }
                 }
                     
                 });    
-            }
+            };
 
     $("#start").click(function(){
+        addNumToCpuPattern(1, 4);
         cpuTurn();
     });
 
