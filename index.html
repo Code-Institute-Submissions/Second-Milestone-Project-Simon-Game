@@ -15,7 +15,7 @@
 <body>
     <!--navbar-->
     <nav id="topNav" class="navbar fixed-to navbar-expand-sm navbar-light "> <!--black font, white font on navbar-dark-->
-        <a class="navbar-brand mx-auto" href="/">SIMON game</a>
+        <a class="navbar-brand mx-auto" href="#">SIMON game</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,6 +49,18 @@
         <source src="assets/sounds/4.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>YOU WIN!!!</p>
+        </div>
+    
+    </div>
+
 
 <div id="rulesBox">
     <div id="rulesDetails" style="display:none">The game is basically a memory game. Simon lights one of the coloured
@@ -117,7 +129,7 @@
 
 
     <!--footer-->
-    <footer class="footer">
+    <footer class="footer footer-light">
          
             <span>Place sticky footer content here.</span>
          
