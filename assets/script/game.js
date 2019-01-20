@@ -119,5 +119,12 @@ $(document).ready(function () {
         });
     });
 
+    $(function () {
+        $("#opener1").click(function () {
+            $("body").toggleClass("black");
+            $("#topNav").toggleClass("navbar-dark")
+        });
+    });
+
 
 });
