@@ -120,6 +120,25 @@ $(document).ready(function () {
     });
 
     $(function () {
+        var details = $('#rulesDetails');
+
+        $('#opener2').click(function (e) {
+            e.stopPropagation();
+
+            if (details.is(":hidden")) {
+                details.slideDown("slow");
+            } else {
+                details.slideUp("slow");
+            }
+        });
+        $(document.body).click(function () {
+            if (details.not(":hidden")) {
+                details.slideUp("slow");
+            }
+        });
+    });
+
+    $(function () {
         $("#opener1").click(function () {
             $("body").toggleClass("black");
             $("#topNav").toggleClass("navbar-dark")
