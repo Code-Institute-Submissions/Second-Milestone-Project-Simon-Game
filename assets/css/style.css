@@ -186,7 +186,8 @@
 }
 
 .footer {
-  position: fixed;
+
+  top: 10px;
   bottom: 0px;
   height: 20px;
   width: 100%;

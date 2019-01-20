@@ -13,6 +13,7 @@ $(document).ready(function () {
     var cpuPattern = [1,2,3,4];
     var currentLevel = 1;
     var usedPattern = [];
+    var sound = true;
 
     //Getting a random integer between two values, inclusive
     function addNumToCpuPattern(min, max) {
@@ -22,27 +23,49 @@ $(document).ready(function () {
     };
 
 
-
     function b1() {
-        $(".b1").animate({ backgroundColor: 'yellow' }, 500).animate({ backgroundColor: "rgb(122, 122, 9)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)"); $("#sound1")[0].play();
-        setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 1000);
+        if (sound == true) {
+            $(".b1").animate({ backgroundColor: 'yellow' }, 500).animate({ backgroundColor: "rgb(122, 122, 9)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)"); $("#sound1")[0].play();
+            setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 1000);
+        }
+        else {
+            $(".b1").animate({ backgroundColor: 'yellow' }, 500).animate({ backgroundColor: "rgb(122, 122, 9)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)");
+            setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 1000);
+        }
     };
 
     function b2() {
-        $(".b2").animate({ backgroundColor: 'rgb(138, 34, 235)' }, 500).animate({ backgroundColor: "rgb(81, 20, 138)" }, 1000).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) "); $("#sound2")[0].play();
-        setTimeout(function () { $(".b2").css("box-shadow", " 0 0 0 0 ") }, 1000);
+        if (sound == true) {
+            $(".b2").animate({ backgroundColor: 'rgb(138, 34, 235)' }, 500).animate({ backgroundColor: "rgb(81, 20, 138)" }, 1000).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) "); $("#sound2")[0].play();
+            setTimeout(function () { $(".b2").css("box-shadow", " 0 0 0 0 ") }, 1000);
+        }
+        else {
+            $(".b2").animate({ backgroundColor: 'rgb(138, 34, 235)' }, 500).animate({ backgroundColor: "rgb(81, 20, 138)" }, 1000).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) ");
+            setTimeout(function () { $(".b2").css("box-shadow", " 0 0 0 0 ") }, 1000);
+        }
     };
 
     function b3() {
-        $(".b3").animate({ backgroundColor: 'red' }, 500).animate({ backgroundColor: "rgb(123, 12, 12)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)"); $("#sound3")[0].play();
-        setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 1000);
+        if (sound == true) {
+            $(".b3").animate({ backgroundColor: 'red' }, 500).animate({ backgroundColor: "rgb(123, 12, 12)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)"); $("#sound3")[0].play();
+            setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 1000);
+        }
+        else {
+            $(".b3").animate({ backgroundColor: 'red' }, 500).animate({ backgroundColor: "rgb(123, 12, 12)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)");
+            setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 1000);
+        }
     };
 
     function b4() {
-        $(".b4").animate({ backgroundColor: 'green' }, 500).animate({ backgroundColor: "rgb(74, 117, 10)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) "); $("#sound4")[0].play();
-        setTimeout(function () { $(".b4").css("box-shadow", " 0 0 0 0 ") }, 1000);
+        if (sound == true) {
+            $(".b4").animate({ backgroundColor: 'green' }, 500).animate({ backgroundColor: "rgb(74, 117, 10)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) "); $("#sound4")[0].play();
+            setTimeout(function () { $(".b4").css("box-shadow", " 0 0 0 0 ") }, 1000);
+        }
+        else {
+            $(".b4").animate({ backgroundColor: 'green' }, 500).animate({ backgroundColor: "rgb(74, 117, 10)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) ");
+            setTimeout(function () { $(".b4").css("box-shadow", " 0 0 0 0 ") }, 1000);
+        }
     };
-
 
 
     function cpuTurn() {
@@ -144,6 +167,16 @@ $(document).ready(function () {
             $("#topNav").toggleClass("navbar-dark")
         });
     });
+
+    $("#sound").click(function () {
+            if (sound==true){
+                sound = false;
+            }
+            else if(sound==false){
+                sound=true;
+            }
+          });
+
 
 
 });
