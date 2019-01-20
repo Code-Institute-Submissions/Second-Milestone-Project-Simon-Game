@@ -14,6 +14,7 @@ $(document).ready(function () {
     var currentLevel = 1;
     var usedPattern = [];
     var sound = true;
+    var strictMode = false;
 
     //Getting a random integer between two values, inclusive
     function addNumToCpuPattern(min, max) {
@@ -106,10 +107,16 @@ $(document).ready(function () {
                         }
                 }
                 else {
-                    
+                    if(strictMode==true){
                         $("#infoscreen").text("game over");
                        
                     }
+                    else if(strictMode==false){
+                        setTimeout(function(){cpuTurn()}, 500);
+                        $("#infoscreen").text("Wrong button!");
+                    }
+                }
+                    
                 });    
             }
 
@@ -176,7 +183,15 @@ $(document).ready(function () {
                 sound=true;
             }
           });
-
+          
+    $("#strict").click(function () {
+        if (strictMode == false) {
+            strictMode = true;
+        }
+        else if (strictMode == true) {
+            strictMode = false;
+        }
+    });
 
 
 });
