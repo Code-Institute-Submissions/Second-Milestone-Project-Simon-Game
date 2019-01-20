@@ -16,7 +16,9 @@ $(document).ready(function () {
     var sound = true;
     var strictMode = false;
     var timersIds = [];         //store IDs of setTimeout's methods that wiil be used to cancel the execution of setTimeout's
-    var numOfLevels = 4;
+    var numOfLevels = 3;
+    var gameStarted = false;
+    var switchedOn = false;
 
     //Getting a random integer between two values, inclusive
     function addNumToCpuPattern(min, max) {
@@ -74,9 +76,8 @@ $(document).ready(function () {
     function cpuTurn() {
         $("#levelscreen").text("level:" + currentLevel);
         $("#infoscreen").text("cpu turn");
-        
+        gameStarted = true;
         var delay = 1200;
-
 
         for (let i = 0; i < cpuPattern.length; i++) {
             let ii = i; timersIds.push(setTimeout(function () {
@@ -98,6 +99,7 @@ $(document).ready(function () {
     function playerTurn() {
         $("#infoscreen").text("player turn");
         usedPattern = cpuPattern.slice(0);
+        if (gameStarted != false) {
             $(".block").click(function () {
                 let blockId = this.id;
                 let item = usedPattern.shift();
@@ -127,7 +129,7 @@ $(document).ready(function () {
                         $("#levelscreen").text("level: ...");
                         $('.block').unbind();
                         currentLevel = 1;
-    
+                        gameStarted = false;
                     }
                     else if(strictMode==false){
                         $("#infoscreen").text("Wrong button!");
@@ -138,21 +140,67 @@ $(document).ready(function () {
                 }
                     
                 });    
-            };
+            }};
 
-    $("#start").click(function(){
+    $("#onOff").click(function () {
+        gameStarted = false;
+        if (switchedOn == false) {
+            switchOn();
+        }
+        else if (switchedOn == true) {
+            $('.block').unbind();
+            switchOff();
+        }
+    });
+
+    $("#startStop").click(function () {			//generate new array of random integers
+        if (gameStarted == false && switchedOn == true) {
+            startGame();
+        }
+        else if (gameStarted == true && switchedOn == true) {
+            stopGame();
+            $("#infoscreen").text("Game stopped. Press start to play");
+        }
+    });
+
+    function switchOn() {
+        $("#levelscreen").text("level: ...");
+        $("#infoscreen").text("Press start button to play")
+        cpuPattern = [];
+        numOfLevels = 10;
+        switchedOn = true;
+    };
+
+    function switchOff() {
+        stopSetTimeouts();
+        cpuPattern = [];
+        $("#infoscreen").text("Game is switched off");
+        numOfLevels = 10;
+        usedPattern = [];
+        currentLevel = 1;
+        switchedOn = false;
+        gameStarted = false;
+        strictMode = false;
+        sound = true;
+        $("#levelscreen").text("");
+    };
+
+    function startGame() {
+        cpuPattern = [];
+        currentLevel = 1;
         addNumToCpuPattern(1, 4);
         cpuTurn();
-    });
+    };
 
-
-    $("#playerTurn").click(function () {
-        playerTurn();
-    });
-
-    $("#stop").click(function () {
+    function stopGame() {
+        $('.block').unbind();
         stopSetTimeouts();
-    });
+        cpuPattern = [];
+        currentLevel = 1;
+        gameStarted = false;
+        $("#levelscreen").text("level: ...");
+    };
+
 
     $(function () {
         var details = $('#helpDetails');
