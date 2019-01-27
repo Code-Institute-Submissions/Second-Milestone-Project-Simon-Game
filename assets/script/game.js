@@ -9,6 +9,12 @@ $(document).ready(function () {
     var sound2 = document.getElementById("sound2");
     var sound3 = document.getElementById("sound3");
     var sound4 = document.getElementById("sound4");
+    var optionsSound = document.getElementById("optionsSound");
+    var switchSound = document.getElementById("switchSound");
+    var onoffSound = document.getElementById("onoffSound");
+    var errorSound = document.getElementById("errorSound");
+    var winSound = document.getElementById("winSound");
+    var loseSound = document.getElementById("loseSound");
 
     var cpuPattern = [];
     var currentLevel = 1;
@@ -111,7 +117,9 @@ $(document).ready(function () {
                     if (usedPattern.length <= 0) {
                         if (currentLevel == numOfLevels){
                             $("#infoscreen").text("you win!");
-                            openWinModal();
+                            stopGame();
+                            setTimeout(function () { openWinModal(); }, 200);
+                            setTimeout(function () { $("#winSound")[0].play(); }, 200);
                             $('.block').unbind();
                         }
                         else {
@@ -131,9 +139,11 @@ $(document).ready(function () {
                         $('.block').unbind();
                         currentLevel = 1;
                         gameStarted = false;
+                        $("#loseSound")[0].play();
                     }
                     else if(strictMode==false){
                         $("#infoscreen").text("Wrong button!");
+                        $("#errorSound")[0].play();
                         delay = 0;
                         $('.block').unbind();
                         timersIds.push(setTimeout(function () { cpuTurn(); }, 1200));
@@ -147,10 +157,12 @@ $(document).ready(function () {
         gameStarted = false;
         if (switchedOn == false) {
             switchOn();
+            $("#onoffSound")[0].play();
         }
         else if (switchedOn == true) {
             $('.block').unbind();
             switchOff();
+            $("#onoffSound")[0].play();
         }
     });
 
@@ -161,6 +173,7 @@ $(document).ready(function () {
         else if (gameStarted == true && switchedOn == true) {
             stopGame();
             $("#infoscreen").text("Game stopped. Press start to play");
+            $("#switchSound")[0].play();
         }
     });
 
@@ -170,6 +183,7 @@ $(document).ready(function () {
         cpuPattern = [];
         numOfLevels = 10;
         switchedOn = true;
+        $("#chk10").css('background-color', 'blue');
     };
 
     function switchOff() {
@@ -183,14 +197,18 @@ $(document).ready(function () {
         gameStarted = false;
         strictMode = false;
         sound = true;
-        $("#levelscreen").text("88888");
+        $("#levelscreen").text("8888888888");
+        $("#chk10").css('background-color', 'lightskyblue');
+        $("#chk5").css('background-color', 'lightskyblue');
+        $("#chk15").css('background-color', 'lightskyblue');
     };
 
     function startGame() {
+        $("#switchSound")[0].play();
         cpuPattern = [];
         currentLevel = 1;
         addNumToCpuPattern(1, 4);
-        cpuTurn();
+        setTimeout(function () { cpuTurn(); }, 300);
     };
 
     function stopGame() {
@@ -208,7 +226,7 @@ $(document).ready(function () {
 
         $('#opener').click(function (e) {
             e.stopPropagation();
-
+            $("#optionsSound")[0].play();
             if (details.is(":hidden")) {
                 details.slideDown("slow");
             } else {
@@ -227,7 +245,7 @@ $(document).ready(function () {
 
         $('#opener2').click(function (e) {
             e.stopPropagation();
-
+            $("#optionsSound")[0].play();
             if (details.is(":hidden")) {
                 details.slideDown("slow");
             } else {
@@ -244,58 +262,88 @@ $(document).ready(function () {
     $(function () {
         $("#opener1").click(function () {
             $("body").toggleClass("black");
-            $("#topNav").toggleClass("navbar-dark")
+            $("#topNav").toggleClass("navbar-dark");
+            $("#optionsSound")[0].play();
+            $("#opener1").toggleClass("fa-moon");
         });
     });
 
     $("#sound").click(function () {
+        $("#sound").toggleClass("fa-volume-mute");
             if (sound==true){
                 sound = false;
+                $("#optionsSound")[0].play();
             }
             else if(sound==false){
                 sound=true;
+                $("#optionsSound")[0].play();
             }
           });
 
     $("#strict").click(function () {
-        if (strictMode == false) {
+        if (switchedOn == true && strictMode == false) {
             strictMode = true;
+            $("#switchSound")[0].play();
         }
-        else if (strictMode == true) {
+        else if (switchedOn == true && strictMode == true) {
             strictMode = false;
+            $("#switchSound")[0].play();
         }
     });
-
 
 
     $("#chk5").click(function () {
         if (switchedOn == true && gameStarted == true) {
             stopGame();
-            $("#console").text("Game stopped. Press start button to play");
+            $("#infoscreen").text("Game stopped. Press start to play");
             numOfLevels = 5;
+            $("#chk5").css('background-color', 'blue');
+            $("#chk10").css('background-color', 'lightskyblue');
+            $("#chk15").css('background-color', 'lightskyblue');
+            $("#optionsSound")[0].play();
         }
         else if (switchedOn == true && gameStarted == false) {
             numOfLevels = 5;
+            $("#chk5").css('background-color', 'blue');
+            $("#chk10").css('background-color', 'lightskyblue');
+            $("#chk15").css('background-color', 'lightskyblue');
+            $("#optionsSound")[0].play();
         }
     });
     $("#chk10").click(function () {
         if (switchedOn == true && gameStarted == true) {
             stopGame();
-            $("#console").text("Game stopped. Press start button to play");
+            $("#infoscreen").text("Game stopped. Press start to play");
             numOfLevels = 10;
+            $("#chk10").css('background-color', 'blue');
+            $("#chk5").css('background-color', 'lightskyblue');
+            $("#chk15").css('background-color', 'lightskyblue');
+            $("#optionsSound")[0].play();
         }
         else if (switchedOn == true && gameStarted == false) {
             numOfLevels = 10;
+            $("#chk10").css('background-color', 'blue');
+            $("#chk5").css('background-color', 'lightskyblue');
+            $("#chk15").css('background-color', 'lightskyblue');
+            $("#optionsSound")[0].play();
         }
     });
     $("#chk15").click(function () {
         if (switchedOn == true && gameStarted == true) {
             stopGame();
-            $("#console").text("Game stopped. Press start button to play");
+            $("#infoscreen").text("Game stopped. Press start to play");
             numOfLevels = 15;
+            $("#chk15").css('background-color', 'blue');
+            $("#chk5").css('background-color', 'lightskyblue');
+            $("#chk10").css('background-color', 'lightskyblue');
+            $("#optionsSound")[0].play();
         }
         else if (switchedOn == true && gameStarted == false) {
             numOfLevels = 15;
+            $("#chk15").css('background-color', 'blue');
+            $("#chk5").css('background-color', 'lightskyblue');
+            $("#chk10").css('background-color', 'lightskyblue');
+            $("#optionsSound")[0].play();
         }
     });
 
