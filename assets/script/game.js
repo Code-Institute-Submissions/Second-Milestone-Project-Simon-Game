@@ -153,7 +153,7 @@ $(document).ready(function () {
                 });    
             }};
 
-    $("#onOff").click(function () {
+    $(".switch-input").click(function () {
         gameStarted = false;
         if (switchedOn == false) {
             switchOn();
@@ -245,7 +245,6 @@ $(document).ready(function () {
 
         $('#opener2').click(function (e) {
             e.stopPropagation();
-            $("#optionsSound")[0].play();
             if (details.is(":hidden")) {
                 details.slideDown("slow");
             } else {

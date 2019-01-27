@@ -115,42 +115,61 @@
 		difficult.<br> Click anywhere on the info to close it</div>
 </div>
 
-<div class="level">
-    <div id="levelscreen"></div>
-</div>
-    
-        <div class="grid-container">
-            <div id = "1" class="item1 block b1"> </div>
-            <div id = "2" class="item2 block b2"> </div>
-            <div id = "3" class="item3 block b3"> </div>
-            <div id = "4" class="item4 block b4"> </div>
-    
-        </div>
-     
-<div class="info">
-    <div id="infoscreen"></div>
-</div>
 
-<div class="container">
-    <div class="row " id='buttons'>
-        <div class="col">
-            <button id="onOff">On/Off</button>
-            <button id="startStop">Start/Stop</button>
-            <button id="strict">Strict</button>
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-md">
+            <div class="level">
+                <div id="levelscreen"></div>
+            </div>
+
+            <div class="grid-container">
+                <div id="1" class="item1 block b1"> </div>
+                <div id="2" class="item2 block b2"> </div>
+                <div id="3" class="item3 block b3"> </div>
+                <div id="4" class="item4 block b4"> </div>
+
+            </div>
+
+            <div class="info">
+                <div id="infoscreen"></div>
+            </div>
+        </div>
+
+
+        <div class="col-md">
+            <div class="container console">
+                <div class="row  ">
+                    <div class="container">
+                        <div class="row " id='buttons'>
+                            <div class="col">
+                                <label class="switch switch-flat">
+                                    <input class="switch-input" type="checkbox" />
+                                    <span class="switch-label" data-on="On" data-off="Off"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                                <button id="startStop">Start/Stop</button>
+                                <button id="strict">Strict</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row " id='levels'>
+                            <div class="col">
+                                Levels
+                                <button class="levelButton" id="chk5">5</button>
+                                <button class="levelButton" id="chk10">10</button>
+                                <button class="levelButton" id="chk15">15</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-<div class="container">
-    <div class="row " id='levels'>
-        <div class="col">
-            <button class="levelButton" id="chk5">5</button>
-            <button class="levelButton" id="chk10">10</button>
-            <button class="levelButton" id="chk15">15</button>
-        </div>
-    </div>
-</div>
-
 
     <!--footer-->
     <footer class="footer footer-light">
