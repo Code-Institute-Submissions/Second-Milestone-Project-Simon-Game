@@ -121,6 +121,8 @@ $(document).ready(function () {
                             setTimeout(function () { openWinModal(); }, 200);
                             setTimeout(function () { $("#winSound")[0].play(); }, 200);
                             $('.block').unbind();
+                            $("#startStopLed").removeClass("led-green");
+                            $("#startStopLed").addClass("led-red");
                         }
                         else {
                             currentLevel++;
@@ -140,6 +142,8 @@ $(document).ready(function () {
                         currentLevel = 1;
                         gameStarted = false;
                         $("#loseSound")[0].play();
+                        $("#startStopLed").removeClass("led-green");
+                        $("#startStopLed").addClass("led-red");
                     }
                     else if(strictMode==false){
                         $("#infoscreen").text("Wrong button!");
@@ -156,6 +160,10 @@ $(document).ready(function () {
     $(".switch-input").click(function () {
         gameStarted = false;
         if (switchedOn == false) {
+            $("#startStopLed").removeClass("led-gray");
+            $("#startStopLed").addClass("led-red");
+            $("#strictLed").removeClass("led-gray");
+            $("#strictLed").addClass("led-red");
             switchOn();
             $("#onoffSound")[0].play();
         }
@@ -163,17 +171,37 @@ $(document).ready(function () {
             $('.block').unbind();
             switchOff();
             $("#onoffSound")[0].play();
+            if ($("#startStopLed").hasClass("led-red")) {
+                $("#startStopLed").removeClass("led-red");
+                $("#startStopLed").addClass("led-gray");
+            }
+            if ($("#startStopLed").hasClass("led-green")) {
+                $("#startStopLed").removeClass("led-green");
+                $("#startStopLed").addClass("led-gray");
+            }
+            if ($("#strictLed").hasClass("led-green")) {
+                $("#strictLed").removeClass("led-green");
+                $("#strictLed").addClass("led-gray");
+            }
+            else if ($("#strictLed").hasClass("led-red")) {
+                $("#strictLed").removeClass("led-red");
+                $("#strictLed").addClass("led-gray");
+            }
         }
     });
 
     $("#startStop").click(function () {			//generate new array of random integers
         if (gameStarted == false && switchedOn == true) {
             startGame();
+            $("#startStopLed").removeClass("led-red");
+            $("#startStopLed").addClass("led-green");
         }
         else if (gameStarted == true && switchedOn == true) {
             stopGame();
             $("#infoscreen").text("Game stopped. Press start to play");
             $("#switchSound")[0].play();
+            $("#startStopLed").removeClass("led-green");
+            $("#startStopLed").addClass("led-red");
         }
     });
 
@@ -283,10 +311,14 @@ $(document).ready(function () {
         if (switchedOn == true && strictMode == false) {
             strictMode = true;
             $("#switchSound")[0].play();
+            $("#strictLed").removeClass("led-red");
+            $("#strictLed").addClass("led-green");
         }
         else if (switchedOn == true && strictMode == true) {
             strictMode = false;
             $("#switchSound")[0].play();
+            $("#strictLed").removeClass("led-green");
+            $("#strictLed").addClass("led-red");
         }
     });
 
@@ -300,6 +332,8 @@ $(document).ready(function () {
             $("#chk10").css('background-color', 'lightskyblue');
             $("#chk15").css('background-color', 'lightskyblue');
             $("#optionsSound")[0].play();
+            $("#startStopLed").removeClass("led-green");
+            $("#startStopLed").addClass("led-red");
         }
         else if (switchedOn == true && gameStarted == false) {
             numOfLevels = 5;
@@ -318,6 +352,8 @@ $(document).ready(function () {
             $("#chk5").css('background-color', 'lightskyblue');
             $("#chk15").css('background-color', 'lightskyblue');
             $("#optionsSound")[0].play();
+            $("#startStopLed").removeClass("led-green");
+            $("#startStopLed").addClass("led-red");
         }
         else if (switchedOn == true && gameStarted == false) {
             numOfLevels = 10;
@@ -336,6 +372,8 @@ $(document).ready(function () {
             $("#chk5").css('background-color', 'lightskyblue');
             $("#chk10").css('background-color', 'lightskyblue');
             $("#optionsSound")[0].play();
+            $("#startStopLed").removeClass("led-green");
+            $("#startStopLed").addClass("led-red");
         }
         else if (switchedOn == true && gameStarted == false) {
             numOfLevels = 15;

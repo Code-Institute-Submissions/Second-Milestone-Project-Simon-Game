@@ -116,7 +116,7 @@
 </div>
 
 
-<div class="container-fluid">
+<div class="container">
     <div class="row ">
         <div class="col-md">
             <div class="level">
@@ -141,27 +141,30 @@
             <div class="container console">
                 <div class="row  ">
                     <div class="container">
-                        <div class="row " id='buttons'>
-                            <div class="col">
+                        <div class="row d-flex justify-content-around" id='buttons'>
+                            
                                 <label class="switch switch-flat">
                                     <input class="switch-input" type="checkbox" />
                                     <span class="switch-label" data-on="On" data-off="Off"></span>
                                     <span class="switch-handle"></span>
                                 </label>
-                                <button id="startStop">Start/Stop</button>
-                                <button id="strict">Strict</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row " id='levels'>
-                            <div class="col">
+                            <div id='levels'>
                                 Levels
                                 <button class="levelButton" id="chk5">5</button>
                                 <button class="levelButton" id="chk10">10</button>
                                 <button class="levelButton" id="chk15">15</button>
                             </div>
+                            </div>
+                        </div>
+                
+
+                    <div class="container">
+                        <div class="row d-flex justify-content-around" id='buttons'">
+        
+          <div> <button class="testbutton" id="startStop"><h6>Start/Stop</h6></button><div id="startStopLed" class="led-gray"></div> </div>
+        <div> <button class="testbutton" id="strict"><h6>Strict</h6></button><div id="strictLed" class="led-gray"></div> </div>
+        
+    </div>
                         </div>
                     </div>
 
@@ -169,7 +172,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
     <!--footer-->
     <footer class="footer footer-light">

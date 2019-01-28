@@ -1,6 +1,6 @@
 .righty{
     text-align: right;
-    margin-top: 1vh;
+    margin-top: 0.5vh;
 }
 .icons{
     margin-right: 1vw;
@@ -196,6 +196,72 @@
 
 #buttons, #levels{
     text-align: center;
+}
+
+.testbutton{
+    margin-bottom: 3vh;
+    margin-top: 2vh;
+    width: 100px;
+    height: 30px;
+	padding: 3px;
+    cursor: pointer;
+    box-shadow: 2px 4px #999;
+   border: 1px solid lightgrey;
+   outline: 3px grey; 
+ text-shadow:  0px 2px 3px rgba(255,255,255,0.3);
+  background-clip: text;
+}
+
+.testbutton:active{
+    background-color: rgb(193, 196, 201);
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    -moz-box-shadow: inset 0 0 10px #000000;
+   box-shadow: inset 0 0 10px #000000;
+    transform: translateY(4px);
+    outline: 3px grey;
+}
+
+h6{
+background-color: #766b6b;
+color: transparent;
+ text-shadow:  0px 2px 3px rgba(255,255,255,0.3);
+-webkit-background-clip: text;
+-moz-background-clip: text;
+  background-clip: text;
+
+}
+
+.led-gray{
+    margin-top: 1vh;
+    margin-left: 1vw;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(184, 183, 183);
+    box-shadow: #000 0 1px 6px 1px;
+}
+.led-green{
+    margin-top: 1vh;
+    margin-left: 1vw;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #80FF00;
+    box-shadow: #000 0 -1px 6px 1px, inset #460 0 -1px 8px, #80FF00 0 3px 11px;
+
+}
+.led-red{
+    margin-top: 1vh;
+    margin-left: 1vw;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #F00;
+    box-shadow: #000 0 -1px 6px 1px, inset #600 0 -1px 8px, #F00 0 3px 11px;
+
 }
 
 .switch {
@@ -432,5 +498,9 @@ p{
 }
 .icons{
     margin-right: 0;
+}
+.console{
+    margin-top: 5px;
+    top: 0;
 }
 }
