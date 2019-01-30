@@ -270,7 +270,7 @@ $(document).ready(function () {
     });
 
     $(function () {
-        var details = $('#rulesDetails');
+        var details = $('#aboutDetails');
 
         $('#opener2').click(function (e) {
             e.stopPropagation();
@@ -426,5 +426,9 @@ $(document).ready(function () {
             $(".b3").animate({ backgroundColor: 'red' }, 400).animate({ backgroundColor: "rgb(123, 12, 12)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)");
             setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 800);
         }, 1200); 
-    }
+    };
+
+    $('.toggle-button').on('click', function () {
+        $('.animated-icon').toggleClass('open');
+    });
 });
