@@ -64,22 +64,27 @@
     border-top: 0;
     margin: 0 auto;
     padding: 7px 15px;
-    text-align: left;
+    text-align: justify;
 }
+
 #rulesDetails{
-    position: absolute;
-    background: #565656;
+   
     border: 1px solid #D1C9C2;
     border-top: 0;
     margin: 0 auto;
-    padding: 7px 15px;
-    webkit-border-bottom-right-radius: 6px;
-    webkit-border-bottom-left-radius: 6px;
-    -moz-border-radius-bottomright: 6px;
-    -moz-border-radius-bottomleft: 6px;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;   
-    z-index: 1;
+    font-size: 1.3em;
+    border-radius: 6px;   
+    display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 80%; 
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(133, 226, 223); /* Fallback color */
+
 }
 
 #helpBox{
@@ -229,9 +234,10 @@ color: transparent;
 -webkit-background-clip: text;
 -moz-background-clip: text;
   background-clip: text;
-
 }
-
+#levButton{
+color: rgb(23, 23, 56);
+}
 .led-gray{
     margin-top: 1vh;
     margin-left: 1vw;
@@ -440,7 +446,7 @@ body {
  padding-right: 10px;
 }
 .fab:hover{
-    color: #000000;
+    color: #4c2020;
 }
 .fa-envelope:before {
     position: relative;
@@ -448,14 +454,31 @@ body {
 }
 
 .levelButton{
-    background-color: lightskyblue;
+    background-color: rgb(166, 204, 228);
     margin: 3px;
+    padding: 3px;
+    width: 25px;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: 2px 4px #999;
+   border: 1px solid lightgrey;
+   outline: 3px grey; 
+ text-shadow:  0px 2px 3px rgba(255,255,255,0.3);
+  background-clip: text;
 }
 
 .levelButtonPressed{
-    background-color: blue;
+    background-color: rgb(63, 63, 100);
+    
 }
-
+.levelButton:active{
+     background-color: rgb(193, 196, 201);
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    -moz-box-shadow: inset 0 0 10px #000000;
+   box-shadow: inset 0 0 10px #000000;
+    transform: translateY(4px);
+    outline: 3px grey;
+}
 
 
 /* The Modal (background) */
@@ -523,4 +546,11 @@ p{
     margin-top: 5px;
     top: 0;
 }
+}
+
+div.a {
+  text-indent: 25px;
+}
+.smallerFont{
+    font-size: 20px;
 }

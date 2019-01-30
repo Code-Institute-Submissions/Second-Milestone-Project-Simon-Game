@@ -412,19 +412,19 @@ $(document).ready(function () {
     }
 
     function intro() {
-        $(".b1").animate({ backgroundColor: 'yellow' }, 500).animate({ backgroundColor: "rgb(122, 122, 9)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)");
-        setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 1000);
+        $(".b1").animate({ backgroundColor: 'yellow' }, 400).animate({ backgroundColor: "rgb(122, 122, 9)" }, 800).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)");
+        setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 800);
         setTimeout(function () {
-            $(".b2").animate({ backgroundColor: 'rgb(138, 34, 235)' }, 500).animate({ backgroundColor: "rgb(81, 20, 138)" }, 1000).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) ");
-            setTimeout(function () { $(".b2").css("box-shadow", " 0 0 0 0 ") }, 1000);
-        }, 500);
+            $(".b2").animate({ backgroundColor: 'rgb(138, 34, 235)' }, 400).animate({ backgroundColor: "rgb(81, 20, 138)" }, 800).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) ");
+            setTimeout(function () { $(".b2").css("box-shadow", " 0 0 0 0 ") }, 800);
+        }, 400);
         setTimeout(function () {
-            $(".b3").animate({ backgroundColor: 'red' }, 500).animate({ backgroundColor: "rgb(123, 12, 12)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)");
-            setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 1000);
-        }, 1000);
+            $(".b4").animate({ backgroundColor: 'green' }, 400).animate({ backgroundColor: "rgb(74, 117, 10)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) ");
+            setTimeout(function () { $(".b4").css("box-shadow", " 0 0 0 0 ") }, 800);
+        }, 800);
         setTimeout(function () {
-            $(".b4").animate({ backgroundColor: 'green' }, 500).animate({ backgroundColor: "rgb(74, 117, 10)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) ");
-            setTimeout(function () { $(".b4").css("box-shadow", " 0 0 0 0 ") }, 1000);
-        }, 1500);
+            $(".b3").animate({ backgroundColor: 'red' }, 400).animate({ backgroundColor: "rgb(123, 12, 12)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)");
+            setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 800);
+        }, 1200); 
     }
 });
