@@ -84,6 +84,15 @@ $(document).ready(function () {
         $("#infoscreen").text("cpu turn");
         gameStarted = true;
         var delay = 1200;
+        if (currentLevel < 5) {
+            delay = 1200;
+        }
+        else if (currentLevel >= 5 && currentLevel < 10) {
+            delay = 1000;
+        }
+        else if (currentLevel >= 10) {
+            delay = 800;
+        }
 
         for (let i = 0; i < cpuPattern.length; i++) {
             let ii = i; timersIds.push(setTimeout(function () {
