@@ -1,5 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Aldrich|Orbitron');
 
+#letterS{
+    color: #0088cc;
+}
+#letterI{
+    color: #13df76;
+}
+#letterM{
+    color: #cc0022;
+}
+#letterO{
+    color: #ccad00;
+}
+#letterN{
+    color: #0088cc;
+}
+a{
+    color: rgb(56, 55, 55);
+}
+a:hover{
+    color: #000000;
+}
+.nav-item{
+    color: #000000;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: medium;
+}
+.nav-item:hover{
+    background-color: rgba(165, 220, 83, 0.653);
+    color: #8409d6;
+}
 .righty{
     text-align: right;
     margin-top: 0.5vh;
@@ -33,7 +63,7 @@
 .tooltips  .tooltiptext{
     visibility: hidden;
     width: 140px;
-    background-color: blue;
+    background-color: rgb(37, 135, 167);
     color: #fff;
     text-align: center;
     border-radius: 6px;
@@ -55,7 +85,7 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color:   black transparent transparent transparent;
+    border-color:   rgb(37, 135, 167) transparent transparent transparent;
 }
 .tooltips:hover .tooltiptext{
     visibility: visible;
@@ -84,7 +114,7 @@
   top: 0;
   width: 100%; /* Full width */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(133, 226, 223); /* Fallback color */
+  background-color:rgba(165, 220, 83, 0.99); /* Fallback color */
 
 }
 
@@ -128,6 +158,8 @@
     ' main right';
   grid-gap: 10px;
   background-color: rgb(152, 107, 107);
+  background-image: url('../images/circ.jpg');
+   box-shadow: 1px 2px 1px 3px rgba(113, 111, 111, 0.7);
   padding: 10px;
   text-align: center;
   margin: 0 auto;
@@ -198,8 +230,13 @@
 .console{
     background-color: #888;
     position: relative;
-    top: 35%;
+    top: 30%;
     max-width: 600px;
+    background-image: url('../images/circ.jpg');
+background-repeat: no-repeat;
+  background-size: cover;
+    background-repeat: no-repeat;
+     box-shadow:  1px 3px rgba(113, 111, 111, 0.7);
 }
 
 #buttons, #levels{
@@ -433,6 +470,20 @@ body {
   margin: 0 0 30px; /* bottom = footer height */
   overflow-x: hidden;
 }
+
+.light{
+     background-image: url('../images/greeny.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.dark{
+     background-image: url('../images/greenyDarker.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 .footer {
     position: absolute;
     bottom: 0;
@@ -444,7 +495,7 @@ body {
     font-size: .9rem;
 }
 .game{
-    margin-bottom: 9px;
+    margin-bottom: 18px;
 }
  .links{
      color: #787878;
@@ -501,19 +552,21 @@ body {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+ 
 }
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  background-image: url('../images/stars.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
   margin: auto;
-  padding: 20px;
+  padding: 0;
   border: 1px solid #888;
   width: 60%;
+  height: 60%;
   text-align: center;
+  justify-content: center;
 }
 
 /* The Close Button */
@@ -543,7 +596,12 @@ p{
         transform: translateX(-50%);
     }
 }
-
+@media (max-width: 767px) {
+    .console{
+        top: 0;
+        margin-top: 10px;
+    }
+}
 @media (max-width: 576px) {
 .righty{
     text-align: center;
@@ -552,10 +610,7 @@ p{
 .icons{
     margin-right: 0;
 }
-.console{
-    margin-top: 5px;
-    top: 0;
-}
+
 #aboutDetails{
     font-size: 1.1em;
 }
@@ -606,7 +661,6 @@ background: #263947;
 .animated-icon span:nth-child(1) {
 top: 0px;
 }
-
 .animated-icon span:nth-child(2), .animated-icon span:nth-child(3) {
 top: 10px;
 }
