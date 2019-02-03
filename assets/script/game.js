@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 
     $("#infoscreen").text("Game is switched off");
-    $("#levelscreen").text("88888888888");
+    $("#levelscreen").text("Level: ...");
 
 
     var sound1 = document.getElementById("sound1");
@@ -80,7 +80,7 @@ $(document).ready(function () {
 
 
     function cpuTurn() {
-        $("#levelscreen").text("level: " + currentLevel + " of " + numOfLevels);
+        $("#levelscreen").text("Level: " + currentLevel + " of " + numOfLevels);
         $("#infoscreen").text("cpu turn");
         gameStarted = true;
         var delay = 1200;
@@ -112,7 +112,7 @@ $(document).ready(function () {
     };
 
     function playerTurn() {
-        $("#infoscreen").text("player turn");
+        $("#infoscreen").text("Player turn");
         usedPattern = cpuPattern.slice(0);
         if (gameStarted != false) {
             $(".block").click(function () {
@@ -125,7 +125,7 @@ $(document).ready(function () {
                     else if (blockId == 4) { b4() }
                     if (usedPattern.length <= 0) {
                         if (currentLevel == numOfLevels){
-                            $("#infoscreen").text("you win!");
+                            $("#infoscreen").text("You Win!");
                             stopGame();
                             setTimeout(function () { openWinModal(); }, 200);
                             setTimeout(function () { $("#winSound")[0].play(); }, 200);
@@ -144,9 +144,9 @@ $(document).ready(function () {
                   }
                 else {
                     if(strictMode==true){
-                        $("#infoscreen").text("game over");
+                        $("#infoscreen").text("Game Over");
                         pattern = [];
-                        $("#levelscreen").text("level: ...");
+                        $("#levelscreen").text("Level: ...");
                         $('.block').unbind();
                         currentLevel = 1;
                         gameStarted = false;
@@ -155,7 +155,7 @@ $(document).ready(function () {
                         $("#startStopLed").addClass("led-red");
                     }
                     else if(strictMode==false){
-                        $("#infoscreen").text("Wrong button!");
+                        $("#infoscreen").text("Wrong pad!");
                         $("#errorSound")[0].play();
                         delay = 0;
                         $('.block').unbind();
@@ -208,7 +208,7 @@ $(document).ready(function () {
         }
         else if (gameStarted == true && switchedOn == true) {
             stopGame();
-            $("#infoscreen").text("Game stopped. Press start to play");
+            $("#infoscreen").text("Press start to play");
             $("#switchSound")[0].play();
             $("#startStopLed").removeClass("led-green");
             $("#startStopLed").addClass("led-red");
@@ -216,12 +216,12 @@ $(document).ready(function () {
     });
 
     function switchOn() {
-        $("#levelscreen").text("level: ...");
-        $("#infoscreen").text("Press start button to play")
+        $("#levelscreen").text("Level: ...");
+        $("#infoscreen").text("Press start to play")
         cpuPattern = [];
         numOfLevels = 10;
         switchedOn = true;
-        $("#chk10").css('background-color', 'blue');
+        $("#chk10").css('background-color', '#0088cc');
     };
 
     function switchOff() {
@@ -235,7 +235,7 @@ $(document).ready(function () {
         gameStarted = false;
         strictMode = false;
         sound = true;
-        $("#levelscreen").text("8888888888");
+        $("#levelscreen").text("Level: ...");
         $("#chk10").css('background-color', 'lightskyblue');
         $("#chk5").css('background-color', 'lightskyblue');
         $("#chk15").css('background-color', 'lightskyblue');
@@ -255,7 +255,7 @@ $(document).ready(function () {
         cpuPattern = [];
         currentLevel = 1;
         gameStarted = false;
-        $("#levelscreen").text("level: ...");
+        $("#levelscreen").text("Level: ...");
     };
 
 
@@ -336,9 +336,9 @@ $(document).ready(function () {
     $("#chk5").click(function () {
         if (switchedOn == true && gameStarted == true) {
             stopGame();
-            $("#infoscreen").text("Game stopped. Press start to play");
+            $("#infoscreen").text("Press start to play");
             numOfLevels = 5;
-            $("#chk5").css('background-color', 'blue');
+            $("#chk5").css('background-color', '#0088cc');
             $("#chk10").css('background-color', 'lightskyblue');
             $("#chk15").css('background-color', 'lightskyblue');
             $("#optionsSound")[0].play();
@@ -347,7 +347,7 @@ $(document).ready(function () {
         }
         else if (switchedOn == true && gameStarted == false) {
             numOfLevels = 5;
-            $("#chk5").css('background-color', 'blue');
+            $("#chk5").css('background-color', '#0088cc');
             $("#chk10").css('background-color', 'lightskyblue');
             $("#chk15").css('background-color', 'lightskyblue');
             $("#optionsSound")[0].play();
@@ -356,9 +356,9 @@ $(document).ready(function () {
     $("#chk10").click(function () {
         if (switchedOn == true && gameStarted == true) {
             stopGame();
-            $("#infoscreen").text("Game stopped. Press start to play");
+            $("#infoscreen").text("Press start to play");
             numOfLevels = 10;
-            $("#chk10").css('background-color', 'blue');
+            $("#chk10").css('background-color', '#0088cc');
             $("#chk5").css('background-color', 'lightskyblue');
             $("#chk15").css('background-color', 'lightskyblue');
             $("#optionsSound")[0].play();
@@ -367,7 +367,7 @@ $(document).ready(function () {
         }
         else if (switchedOn == true && gameStarted == false) {
             numOfLevels = 10;
-            $("#chk10").css('background-color', 'blue');
+            $("#chk10").css('background-color', '#0088cc');
             $("#chk5").css('background-color', 'lightskyblue');
             $("#chk15").css('background-color', 'lightskyblue');
             $("#optionsSound")[0].play();
@@ -376,9 +376,9 @@ $(document).ready(function () {
     $("#chk15").click(function () {
         if (switchedOn == true && gameStarted == true) {
             stopGame();
-            $("#infoscreen").text("Game stopped. Press start to play");
+            $("#infoscreen").text("Press start to play");
             numOfLevels = 15;
-            $("#chk15").css('background-color', 'blue');
+            $("#chk15").css('background-color', 'b#0088cce');
             $("#chk5").css('background-color', 'lightskyblue');
             $("#chk10").css('background-color', 'lightskyblue');
             $("#optionsSound")[0].play();
@@ -387,7 +387,7 @@ $(document).ready(function () {
         }
         else if (switchedOn == true && gameStarted == false) {
             numOfLevels = 15;
-            $("#chk15").css('background-color', 'blue');
+            $("#chk15").css('background-color', '#0088cc');
             $("#chk5").css('background-color', 'lightskyblue');
             $("#chk10").css('background-color', 'lightskyblue');
             $("#optionsSound")[0].play();
