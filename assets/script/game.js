@@ -36,45 +36,45 @@ $(document).ready(function () {
 
     function b1() {
         if (sound == true) {
-            $(".b1").animate({ backgroundColor: 'yellow' }, 500).animate({ backgroundColor: "rgb(122, 122, 9)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)"); $("#sound1")[0].play();
-            setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 1000);
+            $(".b1").animate({ backgroundColor: 'rgb(236, 229, 170)' }, 200).animate({ backgroundColor: "rgb(221, 204, 76)" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)"); $("#sound1")[0].play();
+            setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 400);
         }
         else {
-            $(".b1").animate({ backgroundColor: 'yellow' }, 500).animate({ backgroundColor: "rgb(122, 122, 9)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)");
-            setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 1000);
+            $(".b1").animate({ backgroundColor: 'rgb(236, 229, 170)' }, 200).animate({ backgroundColor: "rgb(221, 204, 76)" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)");
+            setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 400);
         }
     };
 
     function b2() {
         if (sound == true) {
-            $(".b2").animate({ backgroundColor: 'rgb(138, 34, 235)' }, 500).animate({ backgroundColor: "rgb(81, 20, 138)" }, 1000).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) "); $("#sound2")[0].play();
-            setTimeout(function () { $(".b2").css("box-shadow", " 0 0 0 0 ") }, 1000);
+            $(".b2").animate({ backgroundColor: 'rgb(141, 228, 240)' }, 200).animate({ backgroundColor: "#31A9B8" }, 400).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) "); $("#sound2")[0].play();
+            setTimeout(function () { $(".b2").css("box-shadow", " 0 0 0 0 ") }, 400);
         }
         else {
-            $(".b2").animate({ backgroundColor: 'rgb(138, 34, 235)' }, 500).animate({ backgroundColor: "rgb(81, 20, 138)" }, 1000).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) ");
-            setTimeout(function () { $(".b2").css("box-shadow", " 0 0 0 0 ") }, 1000);
+            $(".b2").animate({ backgroundColor: 'rgb(141, 228, 240)' }, 200).animate({ backgroundColor: "#31A9B8" }, 400).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) ");
+            setTimeout(function () { $(".b2").css("box-shadow", " 0 0 0 0 ") }, 400);
         }
     };
 
     function b3() {
         if (sound == true) {
-            $(".b3").animate({ backgroundColor: 'red' }, 500).animate({ backgroundColor: "rgb(123, 12, 12)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)"); $("#sound3")[0].play();
-            setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 1000);
+            $(".b3").animate({ backgroundColor: 'rgb(224, 130, 115)' }, 200).animate({ backgroundColor: "#CF3721" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)"); $("#sound3")[0].play();
+            setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 400);
         }
         else {
-            $(".b3").animate({ backgroundColor: 'red' }, 500).animate({ backgroundColor: "rgb(123, 12, 12)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)");
-            setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 1000);
+            $(".b3").animate({ backgroundColor: 'rgb(224, 130, 115)' }, 200).animate({ backgroundColor: "#CF3721" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)");
+            setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 400);
         }
     };
 
     function b4() {
         if (sound == true) {
-            $(".b4").animate({ backgroundColor: 'green' }, 500).animate({ backgroundColor: "rgb(74, 117, 10)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) "); $("#sound4")[0].play();
-            setTimeout(function () { $(".b4").css("box-shadow", " 0 0 0 0 ") }, 1000);
+            $(".b4").animate({ backgroundColor: '#74dc8b' }, 200).animate({ backgroundColor: "#258039" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) "); $("#sound4")[0].play();
+            setTimeout(function () { $(".b4").css("box-shadow", " 0 0 0 0 ") }, 400);
         }
         else {
-            $(".b4").animate({ backgroundColor: 'green' }, 500).animate({ backgroundColor: "rgb(74, 117, 10)" }, 1000).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) ");
-            setTimeout(function () { $(".b4").css("box-shadow", " 0 0 0 0 ") }, 1000);
+            $(".b4").animate({ backgroundColor: '#74dc8b' }, 200).animate({ backgroundColor: "#258039" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) ");
+            setTimeout(function () { $(".b4").css("box-shadow", " 0 0 0 0 ") }, 400);
         }
     };
 
@@ -423,18 +423,18 @@ $(document).ready(function () {
     }
 
     function intro() {
-        $(".b1").animate({ backgroundColor: 'yellow' }, 200).animate({ backgroundColor: "rgb(122, 122, 9)" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)");
+        $(".b1").animate({ backgroundColor: 'rgb(236, 229, 170)' }, 200).animate({ backgroundColor: "rgb(221, 204, 76)" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)");
         setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 400);
         setTimeout(function () {
-            $(".b2").animate({ backgroundColor: 'rgb(138, 34, 235)' }, 200).animate({ backgroundColor: "rgb(81, 20, 138)" }, 400).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) ");
+            $(".b2").animate({ backgroundColor: 'rgb(141, 228, 240)' }, 200).animate({ backgroundColor: "#31A9B8" }, 400).css("box-shadow", "0px 0px 1px 2px rgb(81, 20, 138) ");
             setTimeout(function () { $(".b2").css("box-shadow", " 0 0 0 0 ") }, 800);
         }, 400);
         setTimeout(function () {
-            $(".b4").animate({ backgroundColor: 'green' }, 200).animate({ backgroundColor: "rgb(74, 117, 10)" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) ");
+            $(".b4").animate({ backgroundColor: '#74dc8b' }, 200).animate({ backgroundColor: "#258039" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(74, 117, 10) ");
             setTimeout(function () { $(".b4").css("box-shadow", " 0 0 0 0 ") }, 400);
         }, 800);
         setTimeout(function () {
-            $(".b3").animate({ backgroundColor: 'red' }, 200).animate({ backgroundColor: "rgb(123, 12, 12)" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)");
+            $(".b3").animate({ backgroundColor: 'rgb(224, 130, 115)' }, 200).animate({ backgroundColor: "#CF3721" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(123, 12, 12)");
             setTimeout(function () { $(".b3").css("box-shadow", " 0 0 0 0 ") }, 400);
         }, 1200); 
     };

@@ -168,23 +168,24 @@ a:hover{
 }
 
 .b1{
-    background-color: rgb(122, 122, 9);
+    background-color: rgb(221, 204, 76);
     cursor: pointer;
-   
+  
 }
 .b2{
-    background-color:rgb(81, 20, 138);
+     
     cursor: pointer;
-
+background-color: #31A9B8;
 }
 .b3{
-    background-color:rgb(123, 12, 12);
+    
     cursor: pointer;
+    background-color: #CF3721;
 }
 .b4{
-    background-color:rgb(74, 117, 10);
+     
     cursor: pointer;
-
+background-color: #258039;
 }
 
 .level{
