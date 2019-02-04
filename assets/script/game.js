@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#infoscreen").text("Game is switched off");
     $("#levelscreen").text("Level: ...");
 
-
+    //sounds variables
     var sound1 = document.getElementById("sound1");
     var sound2 = document.getElementById("sound2");
     var sound3 = document.getElementById("sound3");
@@ -16,6 +16,7 @@ $(document).ready(function () {
     var winSound = document.getElementById("winSound");
     var loseSound = document.getElementById("loseSound");
 
+    //variables used in script
     var cpuPattern = [];
     var currentLevel = 1;
     var usedPattern = [];
@@ -26,14 +27,14 @@ $(document).ready(function () {
     var gameStarted = false;
     var switchedOn = false;
 
-    //Getting a random integer between two values, inclusive
+    //add random integer to pattern, in range from 1 to 4 inclusive
     function addNumToCpuPattern(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         cpuPattern.push(Math.floor(Math.random() * (max - min + 1)) + min);
     };
 
-
+    //four functions that animate pads and play sounds
     function b1() {
         if (sound == true) {
             $(".b1").animate({ backgroundColor: 'rgb(236, 229, 170)' }, 200).animate({ backgroundColor: "rgb(221, 204, 76)" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)"); $("#sound1")[0].play();
@@ -78,7 +79,7 @@ $(document).ready(function () {
         }
     };
 
-
+    //cpu turn
     function cpuTurn() {
         $("#levelscreen").text("Level: " + currentLevel + " of " + numOfLevels);
         $("#infoscreen").text("cpu turn");
@@ -105,12 +106,14 @@ $(document).ready(function () {
         timersIds.push(setTimeout(function () { playerTurn(); }, delay * (currentLevel)))
     };
 
-    function stopSetTimeouts() {                         //stops execution of setTimeout's 
+    //function that stops execution of setTimeout's 
+    function stopSetTimeouts() {                         
         timersIds.forEach(function (timerId) {
             clearTimeout(timerId);
         });
     };
 
+    //player turn
     function playerTurn() {
         $("#infoscreen").text("Player turn");
         usedPattern = cpuPattern.slice(0);
@@ -166,6 +169,7 @@ $(document).ready(function () {
                 });    
             }};
 
+    //switch on/off the game
     $(".switch-input").click(function () {
         gameStarted = false;
         if (switchedOn == false) {
@@ -200,7 +204,8 @@ $(document).ready(function () {
         }
     });
 
-    $("#startStop").click(function () {			//generate new array of random integers
+    //handler for Start/Stop button
+    $("#startStop").click(function () {			
         if (gameStarted == false && switchedOn == true) {
             startGame();
             $("#startStopLed").removeClass("led-red");
@@ -215,6 +220,7 @@ $(document).ready(function () {
         }
     });
 
+    //turn on the game
     function switchOn() {
         $("#levelscreen").text("Level: ...");
         $("#infoscreen").text("Press start to play")
@@ -224,6 +230,7 @@ $(document).ready(function () {
         $("#chk10").css('background-color', '#0088cc');
     };
 
+    //turn off the game
     function switchOff() {
         stopSetTimeouts();
         cpuPattern = [];
@@ -241,6 +248,7 @@ $(document).ready(function () {
         $("#chk15").css('background-color', 'lightskyblue');
     };
 
+    //start play
     function startGame() {
         $("#switchSound")[0].play();
         cpuPattern = [];
@@ -249,6 +257,7 @@ $(document).ready(function () {
         setTimeout(function () { cpuTurn(); }, 300);
     };
 
+    //stop play
     function stopGame() {
         $('.block').unbind();
         stopSetTimeouts();
@@ -258,10 +267,9 @@ $(document).ready(function () {
         $("#levelscreen").text("Level: ...");
     };
 
-
+    //open help details on click
     $(function () {
         var details = $('#helpDetails');
-
         $('#opener').click(function (e) {
             e.stopPropagation();
             $("#optionsSound")[0].play();
@@ -278,9 +286,9 @@ $(document).ready(function () {
         });
     });
 
+    //open 'About' details on click
     $(function () {
         var details = $('#aboutDetails');
-
         $('#opener2').click(function (e) {
             e.stopPropagation();
             if (details.is(":hidden")) {
@@ -296,6 +304,7 @@ $(document).ready(function () {
         });
     });
 
+    //switch between light and dark mode
     $(function () {
         $("#opener1").click(function () {
             $("body").toggleClass("dark");
@@ -307,6 +316,7 @@ $(document).ready(function () {
         });
     });
 
+    //mute/unmute game sounds
     $("#sound").click(function () {
         $("#sound").toggleClass("fa-volume-mute");
             if (sound==true){
@@ -319,6 +329,7 @@ $(document).ready(function () {
             }
           });
 
+    //turn on/off strict mode
     $("#strict").click(function () {
         if (switchedOn == true && strictMode == false) {
             strictMode = true;
@@ -334,7 +345,7 @@ $(document).ready(function () {
         }
     });
 
-
+    //choose number of levels
     $("#chk5").click(function () {
         if (switchedOn == true && gameStarted == true) {
             stopGame();
@@ -355,6 +366,7 @@ $(document).ready(function () {
             $("#optionsSound")[0].play();
         }
     });
+
     $("#chk10").click(function () {
         if (switchedOn == true && gameStarted == true) {
             stopGame();
@@ -375,6 +387,7 @@ $(document).ready(function () {
             $("#optionsSound")[0].play();
         }
     });
+
     $("#chk15").click(function () {
         if (switchedOn == true && gameStarted == true) {
             stopGame();
@@ -396,32 +409,21 @@ $(document).ready(function () {
         }
     });
 
-
-    // Get the modal
-    var modal = document.getElementById('myModal');
-
-  
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-   
+    //open 'Win' modal
+    var modal = document.getElementById('myModal');     // Get the modal
     openWinModal = function () {
         modal.style.display = "block";
     }
-
-    // When the user clicks on modal, close the modal
-    modal.onclick = function () {
+    modal.onclick = function () {               // When the user clicks on modal, close the modal
         modal.style.display = "none";
     }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
+    window.onclick = function (event) {         // When the user clicks anywhere outside of the modal, close it
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
 
+    //animates pads when game is being turned on
     function intro() {
         $(".b1").animate({ backgroundColor: 'rgb(236, 229, 170)' }, 200).animate({ backgroundColor: "rgb(221, 204, 76)" }, 400).css("box-shadow", " 0px 0px 1px 2px rgb(122, 122, 9)");
         setTimeout(function () { $(".b1").css("box-shadow", "0 0 0 0  ") }, 400);
@@ -439,6 +441,7 @@ $(document).ready(function () {
         }, 1200); 
     };
 
+    //opens 'hamburger' icon animation
     $('.toggle-button').on('click', function () {
         $('.animated-icon').toggleClass('open');
     });

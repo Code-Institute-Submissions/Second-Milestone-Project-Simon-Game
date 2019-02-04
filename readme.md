@@ -1,7 +1,7 @@
 ##### Second Milestone Project
 # SIMON game
 
-> A web version of Simon - single-player turn-based electronic memory game. 
+> A web version of Simon - single-player turn-based electronic memory game. It's a second milestone project for Code Institute's full stack developer course in which students need to show how to bring together elements of HTML, CSS and JavaScript and how to combine them to create interactive web applications.
 
 
 ## Table of Contents
@@ -25,8 +25,7 @@
 - __Mentor__ - Rick Gallegos
 
 ## UX
-The aim is to  build a simple single-player game inspired by Simon.
-The original Simon is basically a turn-based memory game. Simon lights one of the coloured pads and sounds a tone, then two, then three, etc. Player attempts to match Simon by pressing the pads in the proper sequence. In case of fail, player gets a 'fail' sound and is out of the game. Of course Simon speeds up as the game progresses so it becomes increasingly more difficult.
+The aim is to  build a web version of simple single-player game - Simon. 
 
 #### Users Stories:
 1. As a person who is visiting the website, I want to read about the game, to understand the rules.
@@ -48,7 +47,7 @@ The original Simon is basically a turn-based memory game. Simon lights one of th
 
 
 #### Wireframes
-1. [Main page](https://github.com/mariusz79/First-Milestone-Project/blob/master/assets/images/indexpage.jpg)
+1. [Main page](https://github.com/mariusz79/Second-Milestone-Project-Simon-Game/blob/master/assets/images/wireframe.png)
 
 
 ## Features
@@ -232,9 +231,14 @@ This site has been deployed on GitHub pages and can be viewed here: [live previe
 
 ## Content
 #### Images
+All images used in the game were downloaded from [pixabay](https://pixabay.com/).
+The 'help' image was made by me in Gimp.
 #### Audio
+All sounds used in the game were downloaded from [freesound.org](https://freesound.org/).
 
+I based the hamburger navigation on the [Bootstrap Hamburger Menu tutorial](https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/).
 
+I based the toggle switch button on the [htmllion tutorial](https://www.htmllion.com/css3-toggle-switch-button.html).
 
 ## Acknowledgements
 I received inspiration for this project from [Code Institute](https://www.codeinstitute.net/).

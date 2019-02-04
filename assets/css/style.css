@@ -1,43 +1,67 @@
 @import url('https://fonts.googleapis.com/css?family=Aldrich|Orbitron');
 
+html {
+  position: relative;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0 0 30px; /* bottom = footer height */
+  overflow-x: hidden;
+}
+
+/*---------------Navbar------------------------------*/
 #letterS{
     color: #0088cc;
 }
+
 #letterI{
     color: #13df76;
 }
+
 #letterM{
     color: #cc0022;
 }
+
 #letterO{
     color: #ccad00;
 }
+
 #letterN{
     color: #0088cc;
 }
+
 a{
     color: rgb(56, 55, 55);
 }
+
 a:hover{
     color: #000000;
 }
+
 .nav-item{
     color: #000000;
     font-family: 'Orbitron', sans-serif;
     font-weight: medium;
 }
+
 .nav-item:hover{
     background-color: rgba(165, 220, 83, 0.653);
     color: #8409d6;
 }
-
+/*---------------Options icons------------------------------*/
 .righty{
     text-align: right;
     margin-top: 0.5vh;
 }
+
 .icons{
     margin-right: 1vw;
 }
+
 .ico {
   margin: 0.5em;
   font-size: 1.3em;
@@ -51,16 +75,16 @@ a:hover{
 }
 
 .ico:hover{
-  
    border: 2px solid rgb(37, 135, 167);
-  cursor:pointer;
-  transform: scale(1.5);
+   cursor:pointer;
+   transform: scale(1.5);
 }
 
 .tooltips{
     position: relative;
     display: inline-block;
 }
+
 .tooltips  .tooltiptext{
     visibility: hidden;
     width: 140px;
@@ -76,7 +100,6 @@ a:hover{
     margin-left: -70px;
     opacity: 0;
     transition: opacity 1s;
-    
 }
 .tooltiptext::after{
     content: " ";
@@ -92,7 +115,7 @@ a:hover{
     visibility: visible;
     opacity: 1;
 }
-
+/*---------------'About' info------------------------------*/
 #aboutBox{
     border-top: 0;
     margin: 3px;
@@ -115,9 +138,16 @@ a:hover{
   width: 100%; /* Full width */
   overflow: auto; /* Enable scroll if needed */
   background-color:rgba(165, 220, 83, 0.99); /* Fallback color */
-
 }
 
+div.indent {
+  text-indent: 25px;
+}
+.smallerFont{
+    font-size: 15px;
+}
+
+/*---------------'Help'------------------------------*/
 #helpBox{
     border-top: 0;
 /* Location of the box */
@@ -125,6 +155,7 @@ a:hover{
   width: 50%;
   height: 50%; 
 }
+
 #helpDetails{
     position: absolute;
     left: 60%;
@@ -133,13 +164,46 @@ a:hover{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-  margin: auto;
-  width: 40%;
-  height: 64%;
+    margin: auto;
+    width: 40%;
+    height: 64%;
 }
 
-.black{
-    background-color: #000; 
+/*-----------------'Win' modal ---------------------*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+ 
+}
+
+/* Modal Content */
+.modal-content {
+  background-image: url('../images/stars.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  height: 60%;
+  text-align: center;
+  justify-content: center;
+}
+
+p{
+    font-size: 45px;
+}
+
+/*------------------------------game panel with coloured pads--------------*/
+.game{
+    margin-bottom: 18px;
 }
 
 .item1 { grid-area: header; }
@@ -170,24 +234,23 @@ a:hover{
 .b1{
     background-color: rgb(221, 204, 76);
     cursor: pointer;
-  
 }
-.b2{
-     
+.b2{ 
     cursor: pointer;
-background-color: #31A9B8;
+    background-color: #31A9B8;
 }
+
 .b3{
-    
     cursor: pointer;
     background-color: #CF3721;
 }
+
 .b4{
-     
     cursor: pointer;
-background-color: #258039;
+    background-color: #258039;
 }
 
+/*---------------game console------------------*/
 .level{
     display: flex;
     justify-content: center;
@@ -197,6 +260,7 @@ background-color: #258039;
     padding: 5px;
     border-bottom: 1px solid#D1C9C2;
 }
+
 .info{
     display: flex;
     justify-content: center;
@@ -206,6 +270,7 @@ background-color: #258039;
     padding: 7px;
     border-top: 1px solid#D1C9C2;
 }
+
 #levelscreen{
     width: 90%;
     height: 20%;
@@ -214,6 +279,7 @@ background-color: #258039;
     font-family: 'Orbitron', sans-serif;
     color: rgb(98, 216, 112);
 }
+
 #infoscreen{
     width: 100%;
     height: 15%;
@@ -231,10 +297,9 @@ background-color: #258039;
     top: 30%;
     max-width: 600px;
     background-image: url('../images/circ.jpg');
-background-repeat: no-repeat;
-  background-size: cover;
-   
-     box-shadow:  1px 3px rgba(113, 111, 111, 0.7);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow:  1px 3px rgba(113, 111, 111, 0.7);
 }
 
 #buttons, #levels{
@@ -251,7 +316,7 @@ background-repeat: no-repeat;
     box-shadow: 1px 4px rgb(95, 94, 94);
    border: 1px solid lightgrey;
    outline: 3px grey; 
- text-shadow:  0px 2px 3px rgba(255,255,255,0.3);
+  text-shadow:  0px 2px 3px rgba(255,255,255,0.3);
   background-clip: text;
   font-family: 'Aldrich', sans-serif;
 }
@@ -260,7 +325,7 @@ background-repeat: no-repeat;
     background-color: rgb(193, 196, 201);
     -webkit-box-shadow: inset 0 0 10px #000000;
     -moz-box-shadow: inset 0 0 10px #000000;
-   box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
     transform: translateY(4px);
     outline: 3px grey;
 }
@@ -273,10 +338,39 @@ color: transparent;
 -moz-background-clip: text;
   background-clip: text;
 }
+
 #levButton{
 color: rgb(23, 23, 56);
 font-family: 'Orbitron', sans-serif;
 }
+
+.levelButton{
+    background-color: rgb(166, 204, 228);
+    margin: 3px;
+    padding: 3px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    box-shadow: 1px 4px rgb(88, 82, 82);
+   border: 1px solid lightgrey;
+   outline: 3px grey; 
+  text-shadow:  0px 2px 3px rgba(255,255,255,0.3);
+  background-clip: text;
+}
+
+.levelButtonPressed{
+    background-color: rgb(63, 63, 100);
+    
+}
+.levelButton:active{
+     background-color: rgb(193, 196, 201);
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    -moz-box-shadow: inset 0 0 10px #000000;
+   box-shadow: inset 0 0 10px #000000;
+    transform: translateY(2px);
+    outline: 3px grey;
+}
+/*------------------Led lights-----------------------*/
 .led-gray{
     margin-top: 1vh;
     margin-left: 1vw;
@@ -287,6 +381,7 @@ font-family: 'Orbitron', sans-serif;
     background-color: rgb(184, 183, 183);
     box-shadow: #000 0 1px 6px 1px;
 }
+
 .led-green{
     margin-top: 1vh;
     margin-left: 1vw;
@@ -298,6 +393,7 @@ font-family: 'Orbitron', sans-serif;
     box-shadow: #000 0 -1px 6px 1px, inset #460 0 -1px 8px, #80FF00 0 3px 11px;
 
 }
+
 .led-red{
     margin-top: 1vh;
     margin-left: 1vw;
@@ -310,6 +406,7 @@ font-family: 'Orbitron', sans-serif;
 
 }
 
+/*-----------------Toggle switch--------------------------------*/
 .switch {
 	position: relative;
 	vertical-align: top;
@@ -457,18 +554,9 @@ font-family: 'Orbitron', sans-serif;
 	-moz-transition: All 0.3s ease;
 	-o-transition: All 0.3s ease;
 }
-html {
-  position: relative;
-  min-height: 100%;
-  overflow-x: hidden;
-}
-body {
-    height: 100%;
-    padding: 0;
-  margin: 0 0 30px; /* bottom = footer height */
-  overflow-x: hidden;
-}
 
+
+/*------------------------backgrounds--------------------*/
 .light{
      background-image: url('../images/greeny.jpg');
     background-size: cover;
@@ -482,171 +570,47 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+/*-----------------------------footer----------------------*/
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 30px;
     line-height: 30px;
-   border-top: 1px solid #ddd;
+    border-top: 1px solid #ddd;
     color: #4c2020;
     font-size: .9rem;
 }
+
 .footerLightFont{
     color: #616462;
 }
+
 .footerBorderLight{
     border-top: 0.5px solid rgba(221, 221, 221, 0.5);
 }
-.game{
-    margin-bottom: 18px;
-}
- .links{
-     color: #494545;
- }
 
 .fab{
     font-size: 1.3em;
  padding-left: 10px;
  padding-right: 10px;
 }
+
 .fab:hover{
     color: #0088cc;
 }
+
 .fa-envelope:before {
     position: relative;
     top: 8px;
 }
 
-.levelButton{
-    background-color: rgb(166, 204, 228);
-    margin: 3px;
-    padding: 3px;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-    box-shadow: 1px 4px rgb(88, 82, 82);
-   border: 1px solid lightgrey;
-   outline: 3px grey; 
- text-shadow:  0px 2px 3px rgba(255,255,255,0.3);
-  background-clip: text;
-}
+ .links{
+     color: #494545;
+ }
 
-.levelButtonPressed{
-    background-color: rgb(63, 63, 100);
-    
-}
-.levelButton:active{
-     background-color: rgb(193, 196, 201);
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    -moz-box-shadow: inset 0 0 10px #000000;
-   box-shadow: inset 0 0 10px #000000;
-    transform: translateY(2px);
-    outline: 3px grey;
-}
-
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
- 
-}
-
-/* Modal Content */
-.modal-content {
-  background-image: url('../images/stars.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 60%;
-  height: 60%;
-  text-align: center;
-  justify-content: center;
-}
-
-
-
-p{
-    font-size: 45px;
-}
-
-
-@media (min-width: 576px) {
-.navbar-brand
-    {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-@media (max-width: 767px) {
-    .console{
-        top: 0;
-        margin-top: 10px;
-    }
-    #helpDetails{
-    height: 52%;
-    left: 48%;
-    width: 51%;
-}
-}
-@media (max-width: 650px) {
-#helpDetails{
-    height: 56%;
-    left: 37%;
-    width: 63%;
-}
-}
-@media (max-width: 576px) {
-.righty{
-    text-align: center;
-    
-}
-.icons{
-    margin-right: 0;
-}
-
-#aboutDetails{
-    font-size: 1.1em;
-}
-#helpDetails{
-    height: 58%;
-    left: 12%;
-    width: 77%;
-}
-}
-@media (max-width: 476px) {
-#helpDetails{
-    height: 62%;
-    left: 4%;
-    width: 91%;
-}
-}
-@media (max-width: 376px) {
-#helpDetails{
-    height: 60%;
-    left: 1%;
-    width: 99%;
-}
-}
-
-div.indent {
-  text-indent: 25px;
-}
-.smallerFont{
-    font-size: 15px;
-}
-
-
+ /*------------------'hamburger' icon animation-------------------*/
 .animated-icon {
 width: 30px;
 height: 20px;
@@ -717,5 +681,73 @@ transform: rotate(-45deg);
 top: 11px;
 width: 0%;
 left: 50%;
+}
+
+.black{
+    background-color: #000; 
+}
+/*-------------------media queries-------------------*/
+@media (min-width: 576px) {
+.navbar-brand
+    {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 767px) {
+    .console{
+        top: 0;
+        margin-top: 10px;
+    }
+    #helpDetails{
+    height: 52%;
+    left: 48%;
+    width: 51%;
+}
+}
+
+@media (max-width: 650px) {
+#helpDetails{
+    height: 56%;
+    left: 37%;
+    width: 63%;
+}
+}
+
+@media (max-width: 576px) {
+.righty{
+    text-align: center;
+    
+}
+.icons{
+    margin-right: 0;
+}
+
+#aboutDetails{
+    font-size: 1.1em;
+}
+#helpDetails{
+    height: 58%;
+    left: 12%;
+    width: 77%;
+}
+}
+
+@media (max-width: 476px) {
+#helpDetails{
+    height: 62%;
+    left: 4%;
+    width: 91%;
+}
+}
+
+@media (max-width: 376px) {
+#helpDetails{
+    height: 60%;
+    left: 1%;
+    width: 99%;
+}
 }
 
