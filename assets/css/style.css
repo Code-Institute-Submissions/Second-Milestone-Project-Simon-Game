@@ -30,6 +30,7 @@ a:hover{
     background-color: rgba(165, 220, 83, 0.653);
     color: #8409d6;
 }
+
 .righty{
     text-align: right;
     margin-top: 0.5vh;
@@ -100,7 +101,6 @@ a:hover{
 }
 
 #aboutDetails{
-   
     border: 1px solid #D1C9C2;
     border-top: 0;
     margin: 0 auto;
@@ -120,25 +120,22 @@ a:hover{
 
 #helpBox{
     border-top: 0;
-    width: 400px;
-    margin: 0 auto;
-    padding: 7px 15px;
-    text-align: left;
+/* Location of the box */
+  top: 0;
+  width: 50%;
+  height: 50%; 
 }
 #helpDetails{
     position: absolute;
-    background: #565656;
-    border: 1px solid #D1C9C2;
-    border-top: 0;
-    margin: 0 auto;
-    padding: 7px 15px;
-     webkit-border-bottom-right-radius: 6px;
-    webkit-border-bottom-left-radius: 6px;
-    -moz-border-radius-bottomright: 6px;
-    -moz-border-radius-bottomleft: 6px;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;   
+    left: 60%;
+    background-image: url('../images/help.jpg');
     z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  margin: auto;
+  width: 40%;
+  height: 64%;
 }
 
 .black{
@@ -235,7 +232,7 @@ a:hover{
     background-image: url('../images/circ.jpg');
 background-repeat: no-repeat;
   background-size: cover;
-    background-repeat: no-repeat;
+   
      box-shadow:  1px 3px rgba(113, 111, 111, 0.7);
 }
 
@@ -491,14 +488,20 @@ body {
     height: 30px;
     line-height: 30px;
    border-top: 1px solid #ddd;
-    color: #787878;
+    color: #4c2020;
     font-size: .9rem;
+}
+.footerLightFont{
+    color: #616462;
+}
+.footerBorderLight{
+    border-top: 0.5px solid rgba(221, 221, 221, 0.5);
 }
 .game{
     margin-bottom: 18px;
 }
  .links{
-     color: #787878;
+     color: #494545;
  }
 
 .fab{
@@ -507,7 +510,7 @@ body {
  padding-right: 10px;
 }
 .fab:hover{
-    color: #4c2020;
+    color: #0088cc;
 }
 .fa-envelope:before {
     position: relative;
@@ -569,24 +572,12 @@ body {
   justify-content: center;
 }
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
 
 p{
     font-size: 45px;
 }
+
 
 @media (min-width: 576px) {
 .navbar-brand
@@ -601,6 +592,18 @@ p{
         top: 0;
         margin-top: 10px;
     }
+    #helpDetails{
+    height: 52%;
+    left: 48%;
+    width: 51%;
+}
+}
+@media (max-width: 650px) {
+#helpDetails{
+    height: 56%;
+    left: 37%;
+    width: 63%;
+}
 }
 @media (max-width: 576px) {
 .righty{
@@ -614,7 +617,27 @@ p{
 #aboutDetails{
     font-size: 1.1em;
 }
+#helpDetails{
+    height: 58%;
+    left: 12%;
+    width: 77%;
 }
+}
+@media (max-width: 476px) {
+#helpDetails{
+    height: 62%;
+    left: 4%;
+    width: 91%;
+}
+}
+@media (max-width: 376px) {
+#helpDetails{
+    height: 60%;
+    left: 1%;
+    width: 99%;
+}
+}
+
 div.indent {
   text-indent: 25px;
 }
@@ -656,7 +679,7 @@ transform: rotate(0deg);
 transition: .25s ease-in-out;
 }
 .animated-icon span {
-background: #263947;
+background: #4b9bd5;
 }
 .animated-icon span:nth-child(1) {
 top: 0px;

@@ -302,6 +302,8 @@ $(document).ready(function () {
             $("#topNav").toggleClass("navbar-dark");
             $("#optionsSound")[0].play();
             $("#opener1").toggleClass("fa-moon");
+            $("footer").toggleClass("footerLightFont");
+            $("footer").toggleClass("footerBorderLight");
         });
     });
 
@@ -408,8 +410,8 @@ $(document).ready(function () {
         modal.style.display = "block";
     }
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
+    // When the user clicks on modal, close the modal
+    modal.onclick = function () {
         modal.style.display = "none";
     }
 
