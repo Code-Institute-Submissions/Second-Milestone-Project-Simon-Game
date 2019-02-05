@@ -1,6 +1,8 @@
 ##### Second Milestone Project
 # SIMON game
 
+<img src="assets/images/mockup.jpg"/>
+
 > A web version of Simon - single-player turn-based electronic memory game. It's a second milestone project for Code Institute's full stack developer course in which students need to show how to bring together elements of HTML, CSS and JavaScript and how to combine them to create interactive web applications.
 
 
@@ -233,11 +235,11 @@ This site has been deployed on GitHub pages and can be viewed here: [live previe
 #### Images
 All images used in the game were downloaded from [pixabay](https://pixabay.com/).
 The 'help' image was made by me in Gimp.
+Mockup image was made using vector graphic created by starline from [freepik.com](https://www.freepik.com/free-vector/different-devices-mockup_1075504.htm)
 #### Audio
 All sounds used in the game were downloaded from [freesound.org](https://freesound.org/).
-
+### Others
 I based the hamburger navigation on the [Bootstrap Hamburger Menu tutorial](https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/).
-
 I based the toggle switch button on the [htmllion tutorial](https://www.htmllion.com/css3-toggle-switch-button.html).
 
 ## Acknowledgements

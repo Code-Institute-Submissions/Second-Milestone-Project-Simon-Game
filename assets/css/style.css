@@ -226,26 +226,26 @@ p{
   margin: 0 auto;
 }
 
-.block{
+.pad{
     width: 100%;
     padding-top: 100%;
 }
 
-.b1{
+.padOne{
     background-color: rgb(221, 204, 76);
     cursor: pointer;
 }
-.b2{ 
+.padTwo{ 
     cursor: pointer;
     background-color: #31A9B8;
 }
 
-.b3{
+.padThree{
     cursor: pointer;
     background-color: #CF3721;
 }
 
-.b4{
+.padFour{
     cursor: pointer;
     background-color: #258039;
 }
