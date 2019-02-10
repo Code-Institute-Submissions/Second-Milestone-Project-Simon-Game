@@ -99,7 +99,7 @@ $(document).ready(function () {                     //will wait until page is fu
                     else if(strictMode==false){                     //if strict mode is off
                         $('#infoscreen').text('Wrong pad!');        //displays info 'wrong pad'
                         errorSound.play();                          //plays 'error' sound  
-                        $('.pad').unbind();                         ////clicking on pads has no effect
+                        $('.pad').unbind();                         //clicking on pads has no effect
                         timersIds.push(setTimeout(function () { cpuTurn(); }, 1200));   //it's time for cpu turn
                     }
                 }
@@ -417,7 +417,7 @@ $(document).ready(function () {                     //will wait until page is fu
             setTimeout(function () { $('.padFour').css('box-shadow', ' 0 0 0 0 ') }, 400);
         }
     };
-    
+
     //animates pads when game is being turned on
     function intro() {
         $('.padOne').animate({ backgroundColor: 'rgb(236, 229, 170)' }, 200).animate({ backgroundColor: 'rgb(221, 204, 76)' }, 400).css('box-shadow', ' 0px 0px 1px 2px rgb(122, 122, 9)');

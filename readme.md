@@ -183,8 +183,12 @@ The site should incorporate links or buttons to allow  user to navigate the site
     - for images compression
 - [audiotrimmer.com](https://audiotrimmer.com/) 
     - for cutting audio files
-- [Pencil v3.0.4](https://pencil.evolus.vn/) 
+- [Pencil v3.0.4](https://pencil.evolus.vn)
     - for wireframes
+- [The W3C Markup Validation Service](https://validator.w3.org/nu/)
+    - to check for syntax errors in HTML code
+- [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+    - to check for errors in CSS code
 
 ## Project approach and difficulties.
 #### Style
@@ -259,7 +263,11 @@ This project website was tested on mentioned above web browsers, desktop/mobile,
 The project looks and works properly on different browsers and screen sizes. The exception is Internet Explorer, which has problems with supporting grid system and Bootstrap, on IE v9 game was unplayable.
  
 When the website is loaded for the first time, there is a small delay the first time a sound(of button or pad) is played. Next clicks on pads and buttons don't bring any delay. Only in Firefox sounds are playing sometimes after delay, even after long gameplay.
+
 In Opera 'Start/Stop' and 'Strict' buttons gets blue color on hover.
+
+#### Code validation
+HTML and Css code for this website were validated using W3C Validation Service. No errros were found in the code.
 
 ## Deployment
 This site has been deployed on GitHub pages and can be viewed here: [live preview of project](https://mariusz79.github.io/Second-Milestone-Project-Simon-Game/) 
