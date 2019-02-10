@@ -15,6 +15,7 @@
 1. [Logic](#logic)
 1. [Style and layout](#style-and-layout)
 1. [Technologies used](#technologies-used)
+1. [Project approach and difficulties](#project-approach-and-difficulties)
 1. [Testing](#testing)
    1. [User stories](#user-stories)
    1. [Different browsers, mobile, desktop](#different-browsers-mobile-desktop)
@@ -28,6 +29,8 @@
 
 ## UX
 The aim is to  build a web version of simple single-player game - Simon. 
+The site should be a Single-Page Application, as responsive as possible.
+Target audience of the website are people who like playing games casually or as their chosen medium of entertainment. To amuse them, this web-game is going to offer, among other things, easy rules, nice animation of colourful pads and pleasant to hear sounds.
 
 #### Users Stories:
 1. As a person who is visiting the website, I want to read about the game, to understand the rules.
@@ -98,6 +101,10 @@ The aim is to  build a web version of simple single-player game - Simon.
     - grey color means functionality of the buttons is disabled
     - red color means functionality of the buttons is enabled
     - green color means functionality of the buttons is being used
+- Navbar
+    - contains logo, About and History links
+- Footer 
+    - contains linked social icons and contact email
 
 
 ## Logic
@@ -113,23 +120,22 @@ There are few variables connected with the cpuTurn() function. Their description
 - var numOfLevels - numbers of levels player has to beat to win the game
 
 How the cpuTurn() function works?
-    It uses 'for' loop to go through the cpuPattern and calls specified functions for every element in the pattern. Called functions (b1(), b2(), b3(), b4()) animate specified pads and play sounds. 
+    It uses 'for' loop to go through the cpuPattern and calls specified functions for every element in the pattern. Called functions animate specified pads and play sounds. 
     The setTimeout() method is used to prevent the game from calling all 'animations and sound' functions in the same time. It calls functions after  time set out in var delay multiplied by index of element in the cpuPattern (in JavaScript first element has index number 0, second has index number 1, etc.). That means animation for first element is called immediately (0 multiplied by number defined in var delay), animation for second element is called after time defined in var delay(1 multiplied by number defined in var delay), etc..
     At the end cpuTurn() calls playerTurn() function. How computer knows when to call playerTurn()?
     The setTimeout() method comes with help again. Player's turn is called after time set out in var delay multiplied by the number contained in var currentLevel(which is corresponding with number of elements in the cpuPattern).
 When cpuTurn() is working, current level is displaying on the small screen at the top of the console and message 'cpu turn' is displaying on the bigger screen at the bottom of the console.
 
-PlayerTurn() function.
-That function is waiting for and listening to player's clicks. It's using following variables:
+PlayerTurn() function is waiting for and listening to player's clicks. It's using following variables:
 - usedPattern, which is shallow copy of cpuPattern(created by slice() method); that means the original array wil be not modified
 - strictMode - if it's value is set up to 'true' player is losing game in case of making mistake
 - item - it's an element taken (by using shift() method) from the beginning of the usedPattern on every user's click. Item is no more in the usedPattern array
-- blockId - equals id(Html attribute) of a pad that has been clicked(by using 'this' keyword)
+- padId - equals id(Html attribute) of a pad(by using 'this' keyword) that has been clicked
 
 How the playerTurn() function works?
-    Every time player clicks the pad, the function compares 'item' with 'blockId'. 
+    Every time player clicks the pad, the function compares 'item' with 'padId'. 
     If they are identical, 'animation and sound' function is called for the clicked pad. The playerTurn() is listening for clicks till last element from usedPattern is gone. In that situation, function checks if var currentLevel equals var numOfLevels(in other words - if player hit the chosen level). If no, cpuTurn() function is called and play continues. If yes, player sees 'You win' modal and the play ends.
-    If 'item' and 'blockId' are not identical, game checks value of variable 'strictMode'. 'False' means that player only hears 'error' tone and can continue the game. 'True' means that player is losing and has to start new game from the begining with newly generated pattern.
+    If 'item' and 'padId' are not identical, game checks value of variable 'strictMode'. 'False' means that player only hears 'error' tone and can continue the game. 'True' means that player is losing and has to start new game from the begining with newly generated pattern.
     When playerTurn() function ends, 'onclick' event gets unbind from the pads, what means that clicking on the pads would not cause any effect.
 When playerTurn() is working, current level is displaying on the small screen at the top of the console and message 'player turn' is displaying on the bigger screen at the bottom of the console.
 
@@ -147,7 +153,6 @@ Whenever possible, I should strive to use semantic HTML5 elements to structure  
 
 - __Navigation__ - 
 The site should incorporate links or buttons to allow  user to navigate the site and reset/control the site functionality.
-
 
 ## Technologies Used
 - [HTML5](https://www.w3.org/TR/html52/)
@@ -169,7 +174,7 @@ The site should incorporate links or buttons to allow  user to navigate the site
 - [Gimp](https://www.gimp.org/)
     - for changing resolution and cutting images, making help image
 - [Chrome developer tools](https://developers.google.com/web/tools/chrome-devtools/)
-    - for editing pages on-the-fly, diagnosing problems
+    - for editing page on-the-fly, diagnosing problems
 - [Visual Studio Code](https://code.visualstudio.com/)
     - code editor
 - [Git & GitHub](https://github.com/)
@@ -180,6 +185,32 @@ The site should incorporate links or buttons to allow  user to navigate the site
     - for cutting audio files
 - [Pencil v3.0.4](https://pencil.evolus.vn/) 
     - for wireframes
+
+## Project approach and difficulties.
+#### Style
+After chosing the project, I familiarized myself with info from links delivered by Code Institue, then I did my own research as well. 
+After that I knew that my project will need a game panel - a place with coloured pads, and a console - a place with grouped buttons, that could be used to operate the game.
+
+I wanted to make game panel circular, with circular pads but I had problem with responsiveness as it did't scale nicely and decided eventually to use grid instead.
+I planned initially to situate the console straight below the game panel but then I discovered that users having large screens would have to scroll the content continuosly to play the game. That's why the console is on bigger screens on the right side of the game panel.
+
+For pads animation I used first jquery's fade in, fade out methods to make impressions od lighting pads. The results were not great and I decided to use jquery ui and it's animation method to animate the colors of the pads.
+
+I kept the navbar and the footer relativelly small, also font and icons on navbar and footer look dim so users could focus easily on gameplay only. Simon's logo however gets colorized to stand out from the rest of the links.
+
+I tried to give the website a bit of industrial look. I used minimalistic wallpaper, metallic background for game panel and console, squared fonts, also decided not to round corners of buttons, console and pads so they could stay sharp.
+
+I used an jpg image to display help, I encounterd problem with responsiveness of the image so I had to use few media queries to change the size of that jpg.
+On smaller sreens I had to move options icons up, so more content could be visible for the user.
+
+#### Logic
+First I created function that adds random integers to array. Then cpu had to go through the array and call animation for each element in the array. First problem was that all animations were called at the same time. I had to learn how to use setTimeout method to make a delay between calls. Next difficult thing was calling playerTurn function after cpu went through entire cpuPattern. I made experiments with callback function, but it didn't work well and I decided to use setTimeout method again.
+
+When it comes to playerTurn function, I was trying few ways to check if player clicks correct pad. Eventually I choose a method where game takes first element from it's own pattern and compares it with ID of the pad clicked by user. 
+
+After core game code was working, I started to build functions and use event handlers responsible for turning the game on and off, starting gameplay, display messages etc.
+
+At the end of the work there was a problem with pads' sounds. When pad were pressed fast, only sound of one click was played. I had to use currentTime = 0 method to rewind the sound everytime user click a pad.
 
 ## Testing
 #### User stories
@@ -218,27 +249,28 @@ User stories from the UX section were tested to ensure that they all work as int
 > - Click 'Day/Night Mode' icon situated between navbar and game panel.
 
 #### Different browsers, mobile, desktop.
-According to https://www.w3schools.com/browsers/ statistics, the most popular browsers in 2018 are:
+According to https://www.w3schools.com/browsers/ statistics, the most popular browsers are:
 - Chrome;
 - Edge/IE,
 - Firefox,
-- Opera,
-- Safari.
+- Opera.
 
-This project website was tested on mentioned above web browsers and desktop/mobile.
-The project looks and works properly on different browsers and screen sizes.
+This project website was tested on mentioned above web browsers, desktop/mobile, Android and iOS.
+The project looks and works properly on different browsers and screen sizes. The exception is Internet Explorer, which has problems with supporting grid system and Bootstrap, on IE v9 game was unplayable.
+ 
+When the website is loaded for the first time, there is a small delay the first time a sound(of button or pad) is played. Next clicks on pads and buttons don't bring any delay. Only in Firefox sounds are playing sometimes after delay, even after long gameplay.
+In Opera 'Start/Stop' and 'Strict' buttons gets blue color on hover.
 
 ## Deployment
 This site has been deployed on GitHub pages and can be viewed here: [live preview of project](https://mariusz79.github.io/Second-Milestone-Project-Simon-Game/) 
 
 ## Content
 #### Images
-All images used in the game were downloaded from [pixabay](https://pixabay.com/).
-The 'help' image was made by me in Gimp.
+All images used in the project were downloaded from [pixabay](https://pixabay.com/).
 Mockup image was made using vector graphic created by starline from [freepik.com](https://www.freepik.com/free-vector/different-devices-mockup_1075504.htm)
 #### Audio
 All sounds used in the game were downloaded from [freesound.org](https://freesound.org/).
-### Others
+#### Others
 I based the hamburger navigation on the [Bootstrap Hamburger Menu tutorial](https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/).
 I based the toggle switch button on the [htmllion tutorial](https://www.htmllion.com/css3-toggle-switch-button.html).
 
