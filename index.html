@@ -15,7 +15,7 @@
 <body class="light">
     <!--------------------navbar------------------------------>
     <nav id="topNav" class="navbar navbar-expand-sm ">
-        <a class="navbar-brand mx-auto" href="#">
+        <a class="navbar-brand mx-auto" href="index.html">
             <span  id="letterS">S</span>
             <span  id="letterI">I</span>
             <span  id="letterM">M</span>
@@ -24,12 +24,12 @@
             game
         </a>
         <button class="navbar-toggler toggle-button" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-            <div class="animated-icon"><span></span><span></span><span></span><span></span></div>
+            <div class="hamburger-icon"><span></span><span></span><span></span><span></span></div>
         </button>
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="opener2"> About</a>
+                    <a class="nav-link" href="#" id="aboutLink"> About</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -60,10 +60,6 @@
         <source src="assets/sounds/optionsSound.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <audio preload="auto" id="switchSound">
-        <source src="assets/sounds/switch.wav" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
     <audio preload="auto" id="onoffSound">
         <source src="assets/sounds/onoffSound.wav" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -80,7 +76,6 @@
         <source src="assets/sounds/lose.wav" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
 <!------------------ The 'Win' modal -------------------------------->
     <div id="myModal" class="modal">
         <!-- Modal content -->
@@ -89,45 +84,43 @@
             <br> <br>
             <div class="smallerFont">(Click anywhere to close it)</div>
         </div>
-    
+    </div>
+<!--------------------Info about the game---------------------------------->
+    <div id="aboutBox">
+        <div id="aboutDetails" style="display:none">
+            <div class="intend">Simon is an electronic game of memory skill invented by Ralph H. Baer and Howard J. Morrison.</div>
+             Simon lights one of the coloured
+             pads and sounds a tone, then two, then three,  etc. Player attempts to match Simon by pressing the pads in the proper sequence. In case of fail player gets a
+            'fail' sound and is out of the game. Of course Simon speeds up as the game progresses so it becomes
+             increasingly more difficult.<br> <br><div class="indent smallerFont">(Click anywhere to close it)</div></div>
+    </div>
+<!--------------------options icons----------------------------------------->
+    <div class="container-fluid">
+            <div class="row icons">
+                <div class="col options-icons">
+                    <div class="tooltips"><i class="fas fa-info-circle ico" id="infoIcon"></i><span class="tooltiptext">Help</span></div>
+                    <div class="tooltips"><i class="far fa-lightbulb ico" id="bulbIcon"></i><span class="tooltiptext">Day/Night mode</span></div>
+                    <div class="tooltips"><i class="fas fa-volume-down ico" id="soundIcon"></i><span class="tooltiptext">Sound on/off</span></div>
+                </div>
+            </div>
+    </div>
+<!--------------------Help----------------------------------------------------->
+    <div id="helpBox">
+        <div id="helpDetails" style="display:none"> </div>
     </div>
 
-<!--------------------Info about the game---------------------------------->
-<div id="aboutBox">
-    <div id="aboutDetails" style="display:none">
-        <div class="intend">Simon is an electronic game of memory skill invented by Ralph H. Baer and Howard J. Morrison.</div>
-         Simon lights one of the coloured
-        pads and sounds a tone, then two, then three,  etc. Player attempts to match Simon by pressing the pads in the proper sequence. In case of fail player gets a
-        'fail' sound and is out of the game. Of course Simon speeds up as the game progresses so it becomes
-        increasingly more difficult.<br> <br><div class="indent smallerFont">(Click anywhere to close it)</div></div>
-</div>
-<!--------------------options icons----------------------------------------->
-<div class="container-fluid">
-        <div class="row icons">
-            <div class="col righty">
-                <div class="tooltips"><i class="fas fa-info-circle ico" id="opener"></i><span class="tooltiptext">Help</span></div>
-                <div class="tooltips"><i class="far fa-lightbulb ico" id="opener1"></i><span class="tooltiptext">Day/Night mode</span></div>
-                <div class="tooltips"><i class="fas fa-volume-down ico" id="sound"></i><span class="tooltiptext">Sound on/off</span></div>
-            </div>
-        </div>
-</div>
-<!--------------------Help----------------------------------------------------->
-<div id="helpBox">
-	<div id="helpDetails" style="display:none"> </div>
-</div>
-
 <!-------------------The core game--------------------------------------------->
-<div class="container-fluid game">
-    <div class="row ">
-        <div class="col-md">
-           <!--------coloured pads--------------------------------------------->
-            <div class="grid-container">
-                <div id="1" class="item1 pad padOne"> </div>
-                <div id="2" class="item2 pad padTwo"> </div>
-                <div id="3" class="item3 pad padThree"> </div>
-                <div id="4" class="item4 pad padFour"> </div>
+    <div class="container-fluid game">
+        <div class="row ">
+            <div class="col-md">
+            <!--------coloured pads--------------------------------------------->
+                <div class="grid-container">
+                    <div id="1" class="item1 pad padOne"> </div>
+                    <div id="2" class="item2 pad padTwo"> </div>
+                    <div id="3" class="item3 pad padThree"> </div>
+                    <div id="4" class="item4 pad padFour"> </div>
+                </div>
             </div>
-        </div>
         <!-------game console--------------------------------------------->
         <div class="col-md">
             <div class="container console">
@@ -140,7 +133,7 @@
                         <div class="row d-flex justify-content-around" id='buttons'>
                             <!--on/off switch-->
                                 <label class="switch switch-flat">
-                                    <input class="switch-input" type="checkbox" />
+                                    <input class="switch-toggle" type="checkbox" />
                                     <span class="switch-label" data-on="On" data-off="Off"></span>
                                     <span class="switch-handle"></span>
                                 </label>
@@ -157,7 +150,7 @@
                         <!--Start/stop and Strict buttons-->
                         <div class="row d-flex justify-content-around" id='buttons'">
                             <div> <button class="testbutton" id="startStop"><h6>Start/Stop</h6></button><div id="startStopLed" class="led-gray"></div> </div>
-                            <div> <button class="testbutton" id="strict"><h6>Strict</h6></button><div id="strictLed" class="led-gray"></div> </div>
+                            <div> <button class="testbutton" id="strictButton"><h6>Strict</h6></button><div id="strictLed" class="led-gray"></div> </div>
                         </div>
                     </div>
                 </div>

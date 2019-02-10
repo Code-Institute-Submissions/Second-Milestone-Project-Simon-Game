@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Aldrich|Orbitron');
+@import url('https://fonts.googleapis.com/css?family=Aldrich|Orbitron');        /*google fonts*/
 
 html {
   position: relative;
@@ -14,6 +14,10 @@ body {
 }
 
 /*---------------Navbar------------------------------*/
+.navbar-brand{
+    font-size: 1.5rem;
+}
+
 #letterS{
     color: #0088cc;
 }
@@ -45,7 +49,7 @@ a:hover{
 .nav-item{
     color: #000000;
     font-family: 'Orbitron', sans-serif;
-    font-weight: medium;
+    font-size: large;
 }
 
 .nav-item:hover{
@@ -53,7 +57,7 @@ a:hover{
     color: #8409d6;
 }
 /*---------------Options icons------------------------------*/
-.righty{
+.options-icons{
     text-align: right;
     margin-top: 0.5vh;
 }
@@ -218,7 +222,6 @@ p{
     'header menu '
     ' main right';
   grid-gap: 10px;
-  background-color: rgb(152, 107, 107);
   background-image: url('../images/circ.jpg');
    box-shadow: 1px 2px 1px 3px rgba(113, 111, 111, 0.7);
   padding: 10px;
@@ -285,7 +288,7 @@ p{
     height: 15%;
     background-color: #6f6d6d;
     font-family: 'Aldrich', sans-serif;
-   font-size: 23px;
+   font-size: 22px;
    color: rgb(98, 216, 112);
    line-height: 1.8em;
     box-shadow: inset 0 0 2px 2px grey;
@@ -309,21 +312,20 @@ p{
 .testbutton{
     margin-bottom: 3vh;
     margin-top: 2vh;
-    width: 100px;
+    width: 102px;
     height: 30px;
 	padding: 3px;
     cursor: pointer;
     box-shadow: 1px 4px rgb(95, 94, 94);
-   border: 1px solid lightgrey;
-   outline: 3px grey; 
-  text-shadow:  0px 2px 3px rgba(255,255,255,0.3);
-  font-family: 'Aldrich', sans-serif;
+    outline: 3px grey; 
+   -webkit-text-shadow: 0px 2px 3px rgba(255,255,255,0.3);
+   -moz-text-shadow: 0px 2px 3px rgba(255,255,255,0.3);
+   text-shadow:  0px 2px 3px rgba(255,255,255,0.3);
+   font-family: 'Aldrich', sans-serif;
 }
 
 .testbutton:active{
     background-color: rgb(193, 196, 201);
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    -moz-box-shadow: inset 0 0 10px #000000;
     box-shadow: inset 0 0 10px #000000;
     transform: translateY(4px);
     outline: 3px grey;
@@ -382,6 +384,7 @@ font-family: 'Orbitron', sans-serif;
     transform: translateY(2px);
     outline: 3px grey;
 }
+
 /*------------------Led lights-----------------------*/
 .led-gray{
     margin-top: 1vh;
@@ -433,7 +436,7 @@ font-family: 'Orbitron', sans-serif;
 	cursor: pointer;
 	box-sizing:content-box;
 }
-.switch-input {
+.switch-toggle {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -475,14 +478,14 @@ font-family: 'Orbitron', sans-serif;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
 	opacity: 0;
 }
-.switch-input:checked ~ .switch-label {
+.switch-toggle:checked ~ .switch-label {
 	background: #E1B42B;
 	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
-.switch-input:checked ~ .switch-label:before {
+.switch-toggle:checked ~ .switch-label:before {
 	opacity: 0;
 }
-.switch-input:checked ~ .switch-label:after {
+.switch-toggle:checked ~ .switch-label:after {
 	opacity: 1;
 }
 .switch-handle {
@@ -509,7 +512,7 @@ font-family: 'Orbitron', sans-serif;
 	border-radius: 6px;
 	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
 }
-.switch-input:checked ~ .switch-handle {
+.switch-toggle:checked ~ .switch-handle {
 	left: 74px;
 	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
 }
@@ -548,11 +551,11 @@ font-family: 'Orbitron', sans-serif;
 .switch-flat .switch-handle:before {
 	background: #eceeef;
 }
-.switch-flat .switch-input:checked ~ .switch-label {
+.switch-flat .switch-toggle:checked ~ .switch-label {
 	background: #FFF;
 	border-color: #0088cc;
 }
-.switch-flat .switch-input:checked ~ .switch-handle {
+.switch-flat .switch-toggle:checked ~ .switch-handle {
 	left: 72px;
 	background: #0088cc;
 	box-shadow: none;
@@ -592,11 +595,10 @@ font-family: 'Orbitron', sans-serif;
     line-height: 30px;
     border-top: 1px solid #ddd;
     color: #4c2020;
-    font-size: .9rem;
 }
 
 .footerLightFont{
-    color: #616462;
+    color: #7d807e;
 }
 
 .footerBorderLight{
@@ -607,6 +609,7 @@ font-family: 'Orbitron', sans-serif;
     font-size: 1.3em;
  padding-left: 10px;
  padding-right: 10px;
+ color: #696565;
 }
 
 .fab:hover{
@@ -618,12 +621,8 @@ font-family: 'Orbitron', sans-serif;
     top: 8px;
 }
 
- .links{
-     color: #494545;
- }
-
  /*------------------'hamburger' icon animation-------------------*/
-.animated-icon {
+.hamburger-icon {
 width: 30px;
 height: 20px;
 position: relative;
@@ -638,7 +637,7 @@ transform: rotate(0deg);
 transition: .5s ease-in-out;
 cursor: pointer;
 }
-.animated-icon span{
+.hamburger-icon span{
 display: block;
 position: absolute;
 height: 3px;
@@ -655,41 +654,41 @@ transform: rotate(0deg);
 -o-transition: .25s ease-in-out;
 transition: .25s ease-in-out;
 }
-.animated-icon span {
+.hamburger-icon span {
 background: #4b9bd5;
 }
-.animated-icon span:nth-child(1) {
+.hamburger-icon span:nth-child(1) {
 top: 0px;
 }
-.animated-icon span:nth-child(2), .animated-icon span:nth-child(3) {
+.hamburger-icon span:nth-child(2), .hamburger-icon span:nth-child(3) {
 top: 10px;
 }
 
-.animated-icon span:nth-child(4) {
+.hamburger-icon span:nth-child(4) {
 top: 20px;
 }
 
-.animated-icon.open span:nth-child(1) {
+.hamburger-icon.open span:nth-child(1) {
 top: 11px;
 width: 0%;
 left: 50%;
 }
 
-.animated-icon.open span:nth-child(2) {
+.hamburger-icon.open span:nth-child(2) {
 -webkit-transform: rotate(45deg);
 -moz-transform: rotate(45deg);
 -o-transform: rotate(45deg);
 transform: rotate(45deg);
 }
 
-.animated-icon.open span:nth-child(3) {
+.hamburger-icon.open span:nth-child(3) {
 -webkit-transform: rotate(-45deg);
 -moz-transform: rotate(-45deg);
 -o-transform: rotate(-45deg);
 transform: rotate(-45deg);
 }
 
-.animated-icon.open span:nth-child(4) {
+.hamburger-icon.open span:nth-child(4) {
 top: 11px;
 width: 0%;
 left: 50%;
@@ -698,6 +697,7 @@ left: 50%;
 .black{
     background-color: #000; 
 }
+
 /*-------------------media queries-------------------*/
 @media (min-width: 576px) {
 .navbar-brand
@@ -709,30 +709,36 @@ left: 50%;
 }
 
 @media (max-width: 767px) {
+    .options-icons{
+    text-align: center;
+}
     .console{
         top: 0;
         margin-top: 10px;
     }
     #helpDetails{
-    height: 52%;
-    left: 48%;
-    width: 51%;
+    height: 55%;
+    left: 24%;
+    width: 52%;
+}
+.footer{
+     font-size: .9rem;
+}
+.testbutton{
+    margin-bottom: 1vh;
+    margin-top: 0vh;
 }
 }
 
 @media (max-width: 650px) {
 #helpDetails{
     height: 56%;
-    left: 37%;
+    left: 18%;
     width: 63%;
 }
 }
 
 @media (max-width: 576px) {
-.righty{
-    text-align: center;
-    
-}
 .icons{
     margin-right: 0;
 }
@@ -744,6 +750,13 @@ left: 50%;
     height: 58%;
     left: 12%;
     width: 77%;
+}
+.nav-item{
+    font-size: medium;
+}
+.modal-content{
+    width: 80%;
+    height: 80%;
 }
 }
 
@@ -761,5 +774,19 @@ left: 50%;
     left: 1%;
     width: 99%;
 }
+.navbar{
+    padding: 0;
+}
+.options-icons {
+    margin-top: -3vh;
+}
+.grid-container{
+    max-width: 300px;
+}
 }
 
+@media (max-width: 319px){
+    .levelButton{
+        margin: 0;
+    }
+}
