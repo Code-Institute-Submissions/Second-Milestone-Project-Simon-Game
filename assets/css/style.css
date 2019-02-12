@@ -767,6 +767,14 @@ left: 50%;
     width: 80%;
     height: 80%;
 }
+[type=reset], [type=submit], button, html [type=button] {
+     -webkit-appearance: none; 
+}
+.testbutton{
+    background-color: rgb(230, 229, 229);
+    box-shadow: 1px 2px rgb(95, 94, 94);
+    border: .2px solid gray;
+}
 }
 
 @media (max-width: 476px) {
