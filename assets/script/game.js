@@ -245,12 +245,11 @@ $(document).ready(function () {                     //will wait until page is fu
 
 
     //mute/unmute game sounds
-    $('#soundIcon').click(function () {                     //when user clicks 'sound' icon
-                                                            //icon changes to 'mute' icon
+    $('#soundIcon').click(function () {                     //when user clicks 'sound' icon                               
         if (soundIsOn){                                     //if sound is turned on
             soundIsOn = false;                              //mute
             optionsSound.play();                            //plays sound
-            $('#soundIcon').removeClass('fa-lightbulb').addClass('fa-volume-mute');
+            $('#soundIcon').removeClass('fa-lightbulb').addClass('fa-volume-mute'); //icon changes to 'mute' icon
             }
         else {                                              //if sound is turned off
             soundIsOn=true;                                 //unmute
