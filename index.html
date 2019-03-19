@@ -12,9 +12,9 @@
     <title>Simon Game</title>
 </head>
 
-<body class="light">
+<body class="background background-light">
     <!--========================navbar==============================-->
-    <nav id="topNav" class="navbar navbar-expand-sm ">
+    <nav id="topNav" class="navbar navbar-expand-sm navbar-light">
         <a class="navbar-brand mx-auto" href="index.html">
             <span  id="letterS">S</span>
             <span  id="letterI">I</span>
@@ -23,10 +23,11 @@
             <span  id="letterN">N</span>
             game
         </a>
-        <div class="navbar-toggler toggle-button" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-            <div class="hamburger-icon"><span></span><span></span><span></span><span></span></div>
-        </div>
-        <div class="navbar-collapse collapse">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="aboutLink"> About</a>
@@ -39,6 +40,7 @@
             </ul>
         </div>
     </nav>
+  
 <!--=========================sounds for game=============================-->
     <audio preload="auto" id="sound1">
         <source src="assets/sounds/1.mp3" type="audio/mpeg">
@@ -79,36 +81,39 @@
 <!--====================== The 'Win' modal ===============================-->
     <div id="myModal" class="modal">
         <!-- Modal content -->
-        <div class="modal-content">
+        <div class="modal-content win-modal">
             <p>YOU WIN!!!</p>
-            <br> <br>
-            <div class="smallerFont">(Click anywhere to close it)</div>
+            <br><br>
+            <div class="smallerFont"><p>(Click anywhere to close it)</p>
+            </div>
         </div>
     </div>
 <!--=======================Info about the game============================-->
     <div id="aboutBox">
         <div id="aboutDetails" style="display:none">
-            <div class="intend">Simon is an electronic game of memory skill invented by Ralph H. Baer and Howard J. Morrison.</div>
-             Simon lights one of the coloured
+            <div class="intend"><p>Simon is an electronic game of memory skill invented by Ralph H. Baer and Howard J. Morrison.</p>
+            </div>
+             <p>Simon lights one of the coloured
              pads and sounds a tone, then two, then three,  etc. Player attempts to match Simon by pressing the pads in the proper sequence. In case of fail player gets a
             'fail' sound and is out of the game. Of course Simon speeds up as the game progresses so it becomes
-             increasingly more difficult.<br> <br><div class="indent smallerFont">(Click anywhere to close it)</div></div>
+             increasingly more difficult.</p>
+             <br><br>
+             <div class="indent smallerFont"><p>(Click anywhere to close it)</p>
+            </div>
+        </div>
     </div>
 <!--=======================options icons=====================================-->
     <div class="container-fluid">
             <div class="row icons">
                 <div class="col options-icons">
-                    <div class="tooltips"><i class="fas fa-info-circle ico" id="infoIcon"></i><span class="tooltiptext">Help</span></div>
+                    <div class="tooltips"><i class="fas fa-info-circle ico" id="helpIcon"></i><span class="tooltiptext">Help</span></div>
                     <div class="tooltips"><i class="far fa-lightbulb ico" id="bulbIcon"></i><span class="tooltiptext">Day/Night mode</span></div>
                     <div class="tooltips"><i class="fas fa-volume-down ico" id="soundIcon"></i><span class="tooltiptext">Sound on/off</span></div>
                 </div>
             </div>
     </div>
 <!--=========================Help============================================-->
-    <div id="helpBox">
-        <div id="helpDetails" style="display:none"> </div>
-    </div>
-
+    <div id="helpDetails" style="display:none"> </div>
 <!--=======================The core game=====================================-->
     <div class="container-fluid game">
         <div class="row ">
@@ -125,18 +130,16 @@
         <div class="col-md">
             <div class="container console">
                 <!--level display-->
-            <div class="level">
+            <div class="display level">
                 <div id="levelscreen"></div>
             </div>
                 <div class="row  ">
                     <div class="container">
                         <div class="row d-flex justify-content-around buttons">
                             <!--on/off switch-->
-                                <label class="switch switch-flat">
-                                    <input class="switch-toggle" type="checkbox" />
-                                    <span class="switch-label" data-on="On" data-off="Off"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
+                               <label class="switch"><input type="checkbox" id="toggleButton">
+                                 <div class="slider round"></div>
+                               </label>
                             <!--level buttons-->
                             <div id='levels'>
                                 Levels
@@ -149,13 +152,13 @@
                     <div class="container">
                         <!--Start/stop and Strict buttons-->
                         <div class="row d-flex justify-content-around buttons">
-                            <div> <button class="testbutton" id="startStop"> <span class="buttonContent">Start/Stop</span> </button><div id="startStopLed" class="led-gray"></div> </div>
-                            <div> <button class="testbutton" id="strictButton"><span class="buttonContent">Strict</span>  </button><div id="strictLed" class="led-gray"></div> </div>
+                            <div> <button class="testbutton" id="startStop"> <span class="buttonContent">Start/Stop</span> </button><div id="startStopLed" class="led ledGrey"></div> </div>
+                            <div> <button class="testbutton" id="strictButton"><span class="buttonContent">Strict</span>  </button><div id="strictLed" class="led ledGrey"></div> </div>
                         </div>
                     </div>
                 </div>
                 <!--info display-->
-             <div class="info">
+             <div class="display info">
                 <div id="infoscreen"></div>
             </div>
                 </div>
@@ -166,29 +169,28 @@
     <footer class="footer">
         <div class="container-fluid">
             <div class="row">
-                <div class=" col-xs-12 col-sm-6 col-md ">
-                    <div class="row   justify-content-center">
+                <div class="col-xs-12 col-sm-6 col-md">
+                    <div class="row justify-content-center">
                         <i class="fas fa-envelope"></i> &nbsp; mpawlowic@gmail.com
                     </div>
                 </div>
-                <div class=" col-xs-12 col-sm-6  col-md  ">
-                    <div class="row   justify-content-center">
-                        <a href='https://github.com/mariusz79' target="blank" class="links"> <i class="fab fa-github"></i></a>
-                        <a href='https://www.linkedin.com/in/mariusz-pawlowicz-developer' target="blank" class="links"><i class="fab fa-linkedin"></i>
+                <div class=" col-xs-12 col-sm-6 col-md ">
+                    <div class="row justify-content-center">
+                        <a href='https://github.com/mariusz79' target="blank" class="links"> <i class="fab fa-github footer-icon"></i></a>
+                        <a href='https://www.linkedin.com/in/mariusz-pawlowicz-developer' target="blank" class="links"><i class="fab fa-linkedin footer-icon"></i>
                         </a>
                         <a href='https://www.youtube.com/channel/UCqxR60TSBnyJAXxpHlJ2dTw' target="blank" class="links"><i
-                                class="fab fa-youtube"></i></a>
+                                class="fab fa-youtube footer-icon"></i></a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md copyright">
-                    <div class="row   justify-content-center">
-                        <span>© 2019 Copyright: Mariusz Pawlowicz</span>
+                    <div class="row  justify-content-center">
+                        <span>&copy 2019 Copyright: Mariusz Pawlowicz</span>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-
 
 <!-- Scripts located at the bottom of the body to insure page is fully loaded before execution -->
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
