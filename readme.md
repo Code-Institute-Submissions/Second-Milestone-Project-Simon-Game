@@ -25,7 +25,7 @@
 
 ## Team
 - __Author__ - Mariusz Pawlowicz
-- __Mentor__ - Rick Gallegos
+- __Mentor__ - Antonija Šimić
 
 ## UX
 The aim is to  build a web version of simple single-player game - Simon. 
@@ -278,9 +278,6 @@ All images used in the project were downloaded from [pixabay](https://pixabay.co
 Mockup image was made using vector graphic created by starline from [freepik.com](https://www.freepik.com/free-vector/different-devices-mockup_1075504.htm)
 #### Audio
 All sounds used in the game were downloaded from [freesound.org](https://freesound.org/).
-#### Others
-I based the hamburger navigation on the [Bootstrap Hamburger Menu tutorial](https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/).
-I based the toggle switch button on the [htmllion tutorial](https://www.htmllion.com/css3-toggle-switch-button.html).
 
 ## Acknowledgements
 I received inspiration for this project from [Code Institute](https://www.codeinstitute.net/).
